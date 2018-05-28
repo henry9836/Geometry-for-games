@@ -5,6 +5,10 @@
 
 using namespace std;
 
+TVector3 AG;
+TVector3 BG;
+TVector3 CG;
+TVector3 DG;
 
 /*
 name of function: Equals
@@ -58,42 +62,87 @@ name of function: Add
 @parameter: adds two vectors
 @return: result vector (struct)
 */
+
 TVector3& Add(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
-	/*
+	
 	system("cls");
 	float iT = 0;
 
 	cout << "-= Vector 1 =-" << endl;
 	cout << "X: ";
 	cin >> iT;
-	_krA.m_fX = getfloat(iT);
+	AG.m_fX = getfloat(iT);
 
 	cout << "Y: ";
 	cin >> iT;
-	_krA.m_fY = getfloat(iT);
+	AG.m_fY = getfloat(iT);
 
 	cout << "Z: ";
 	cin >> iT;
-	_krA.m_fZ = getfloat(iT);
-
+	AG.m_fZ = getfloat(iT);
+	
 	cout << "-= Vector 2 =-" << endl;
 	cout << "X: ";
 	cin >> iT;
-	_krB.m_fX = getfloat(iT);
+	BG.m_fX = getfloat(iT);
 
 	cout << "Y: ";
 	cin >> iT;
-	_krB.m_fY = getfloat(iT);
+	BG.m_fY = getfloat(iT);
 
 	cout << "Z: ";
 	cin >> iT;
-	_krB.m_fZ = getfloat(iT);
-*/
-	_rResultant.m_fX = (_krB.m_fX + _krA.m_fX);
-	_rResultant.m_fY = (_krB.m_fY + _krA.m_fY);
-	_rResultant.m_fZ = (_krB.m_fZ + _krA.m_fZ);
-/*
+	BG.m_fZ = getfloat(iT);
+
+	_rResultant.m_fX = (AG.m_fX + BG.m_fX);
+	_rResultant.m_fY = (AG.m_fY + BG.m_fY);
+	_rResultant.m_fZ = (AG.m_fZ + BG.m_fZ);
+
 	cout << "Result: (" << _rResultant.m_fX << ", " << _rResultant.m_fY << ", " << _rResultant.m_fZ << ")" << endl;
+
+	return _rResultant;
+}
+/*
+name of function : Subtract
+@author: Henry Oliver
+@parameter: Subtracts two vectors
+@return: result vector(struct)
 */
+TVector3& Subtract(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
+	system("cls");
+	float iT = 0;
+
+	cout << "-= Vector 1 (Original) =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	AG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	AG.m_fY = getfloat(iT);
+
+	cout << "Z: ";
+	cin >> iT;
+	AG.m_fZ = getfloat(iT);
+
+	cout << "-= Vector 2 (To Subtract) =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	BG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	BG.m_fY = getfloat(iT);
+
+	cout << "Z: ";
+	cin >> iT;
+	BG.m_fZ = getfloat(iT);
+
+	_rResultant.m_fX = (AG.m_fX - BG.m_fX);
+	_rResultant.m_fY = (AG.m_fY - BG.m_fY);
+	_rResultant.m_fZ = (AG.m_fZ - BG.m_fZ);
+
+	cout << "Result: (" << _rResultant.m_fX << ", " << _rResultant.m_fY << ", " << _rResultant.m_fZ << ")" << endl;
+
 	return _rResultant;
 }

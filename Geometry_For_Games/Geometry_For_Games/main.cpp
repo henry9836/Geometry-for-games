@@ -82,6 +82,7 @@ int main() {
 		cout << "Main Menu" << endl;
 		cout << "1. Vector Equals Vector" << endl;
 		cout << "2. Add Two Vectors" << endl;
+		cout << "3. Subtract Two Vectors" << endl;
 		cout << "99. Exit" << endl;
 		cout << "Please Choose an Option:";
 		cin >> choice;
@@ -99,11 +100,17 @@ int main() {
 		}
 
 		else if (choice == 2) { //Add
-			//TVector3 C = Add(A ,B, C);
 			Add(A, B, C);
 			cout << "Press Enter To Return...";
 			cin >> iT;
 		}
+
+		else if (choice == 3) { //Subtract
+			Subtract(A, B, C);
+			cout << "Press Enter To Return...";
+			cin >> iT;
+		}
+
 
 		else if (choice == 99) {
 			break;
