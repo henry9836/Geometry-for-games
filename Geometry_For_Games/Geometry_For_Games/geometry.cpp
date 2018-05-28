@@ -346,21 +346,6 @@ Hence, we can call normalized vectors as unit vectors (i.e. vectors with unit le
 	cin >> iT;
 	AG.m_fZ = getfloat(iT);
 
-	cout << endl << endl;
-
-	cout << "-= Vector 2 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	BG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	BG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	BG.m_fZ = getfloat(iT);
-
 	//|V| = sqrt(x*x + y*y + z*z)
 	AL = sqrt((BG.m_fX * AG.m_fX)+(BG.m_fY * AG.m_fY)+(BG.m_fZ * AG.m_fZ));
 
