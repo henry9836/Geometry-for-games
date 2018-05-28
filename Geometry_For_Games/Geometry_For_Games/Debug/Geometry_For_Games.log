@@ -1,2 +1,5 @@
 ﻿  main.cpp
+e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(83): warning C4101: 'iT': unreferenced local variable
+  geometry.cpp
+  Generating Code...
   Geometry_For_Games.vcxproj -> E:\Geometry for games\Geometry_For_Games\Debug\Geometry_For_Games.exe
