@@ -10,6 +10,9 @@ TVector3 BG;
 TVector3 CG;
 TVector3 DG;
 
+
+
+
 /*
 name of function: Equals
 @author: Henry Oliver
@@ -381,11 +384,62 @@ Hence, we can call normalized vectors as unit vectors (i.e. vectors with unit le
 	return _rResultant;
 }
 
+
+
+
+/*
+name of function : ComputeDistanceCircleToCircle
+@author: Andres Villacreces
+@parameter: Find the Distance Between the Center of two Circles
+@return: float
+*/
+float ComputeDistanceCircleToCircle(const TCircle& _krCircle1, const TCircle& _krCircle2) {
+
+system("cls");
+
+	float x1, y1, x2, y2, r1, r2, d;
+
+	std::cout << "Computing Line and Sphere Intersection:" << endl << endl;
+
+	std::cout << "1) Defining the EQUATION for the First CIRCLE:" << endl << endl;
+
+	std::cout << "      Enter the Coordinate x-- ";
+	std::cin >> x1;
+	std::cout << "      Enter the Coordinate y-- ";
+	std::cin >> y1;
+	std::cout << "      Enter the Radius-- ";
+	std::cin >> r1;
+	cout << endl;
+	std::cout << "  The EQUATION for the First Circle is:" << endl;
+	std::cout << "    * " << "(" << "x" << " - " << x1 << ")" << "^" << 2 << " + " << "(" << "y" << " - " << y1 << ")" << "^" << 2 << " = " << r1 << "^" << 2 << "\n";
+	cout << endl << endl;
+
+	std::cout << "2) Defining the EQUATION for the Second CIRCLE:" << endl << endl;
+
+	std::cout << "      Enter the Coordinate x-- ";
+	std::cin >> x2;
+	std::cout << "      Enter the Coordinate y-- ";
+	std::cin >> y2;
+	std::cout << "      Enter the Radius-- ";
+	std::cin >> r2;
+	cout << endl;
+	std::cout << "  The EQUATION for the Second Circle is:" << endl;
+	std::cout << "    * " << "(" << "x" << " - " << x2 << ")" << "^" << 2 << " + " << "(" << "y" << " - " << y2 << ")" << "^" << 2 << " = " << r2 << "^" << 2 << "\n";
+	cout << endl << endl;
+
+	std::cout << "3) Finding the Distance Between the Centers of TWO CIRCLES:" << endl << endl;
+	d = sqrt((pow((x2 - x1), 2)) + (pow((y2 - y1), 2)));
+	std::cout << "    The Distance Between the Centers of Two Circles is:  " << endl << "     * " << "[" << d << "]" << endl;
+	cout << endl;
+
+	return 0.0;
+}
+
 /*
 name of function : IsLinePlaneIntersection
 @author: Andres Villacreces
-@parameter: Find the Distance Between a Line and a Plane 
-@return: _rResultant (struct)
+@parameter: Find the Point of Intersection Between a Line and a Plane 
+@return: bool
 */
 bool IsLinePlaneIntersection(const T3DLine& _krLine, const TPlane& _krPlane, TVector3& _rv3IntersectionPoint) {
 
