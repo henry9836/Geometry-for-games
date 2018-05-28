@@ -91,6 +91,7 @@ int main() {
 		cout << "3. Subtract Two Vectors" << endl;
 		cout << "4. Scale A Vector" << endl;
 		cout << "5. Magnitude" << endl;
+		cout << "6. Dot Product" << endl;
 		cout << "99. Exit" << endl;
 		cout << "Please Choose an Option: ";
 		cin >> choice;
@@ -125,6 +126,17 @@ int main() {
 		else if (choice == 5) { //Magnitude
 			af = Magnitude(A);
 			cout << "Magnitude of Vector: " << af << endl;
+			system("pause");
+		}
+
+		else if (choice == 6) { //Dot Product
+			af = DotProduct(A,B);
+			cout << "Dot Product of Vectors: " << af << endl;
+			system("pause");
+		}
+
+		else if (choice == 7) { //Dot Product
+			CrossProduct(A, B, C);
 			system("pause");
 		}
 

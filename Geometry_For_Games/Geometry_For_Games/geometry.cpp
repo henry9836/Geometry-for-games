@@ -214,3 +214,52 @@ float Magnitude(const TVector3& _krA) {
 
 	return result;
 }
+
+/*
+name of function : Magnitude
+@author: Henry Oliver
+@parameter: Finds the magnitude of a vector
+@return: float (result)
+*/
+float DotProduct(const TVector3& _krA, const TVector3& _krB) {
+	system("cls");
+	float iT = 0;
+	float result = 0;
+
+	cout << "-= Vector 1 =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	AG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	AG.m_fY = getfloat(iT);
+
+	cout << "Z: ";
+	cin >> iT;
+	AG.m_fZ = getfloat(iT);
+
+	cout << endl << endl;
+
+	cout << "-= Vector 2 =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	BG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	BG.m_fY = getfloat(iT);
+
+	cout << "Z: ";
+	cin >> iT;
+	BG.m_fZ = getfloat(iT);
+
+	result = ((AG.m_fX + BG.m_fX)+(AG.m_fY + BG.m_fY)+(BG.m_fZ + BG.m_fZ));
+
+	return result;
+}
+
+
+TVector3& CrossProduct(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
+
+}
