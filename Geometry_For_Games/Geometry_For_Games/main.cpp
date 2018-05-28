@@ -78,7 +78,7 @@ int main() {
 	GetWindowRect(console, &w);
 	MoveWindow(console, w.left, w.top, 800, 400, TRUE); //Resize console window
 
-
+	int amountoftests = 0;
 
 	int iT;
 
@@ -93,7 +93,9 @@ int main() {
 		cout << "5. Magnitude" << endl;
 		cout << "6. Dot Product" << endl;
 		cout << "7. CrossProduct" << endl;
+		cout << "8. Normalise" << endl;
 		cout << endl;
+		cout << "Tested: " << amountoftests << " times" << endl;
 		cout << "99. Exit" << endl;
 		cout << "Please Choose an Option: ";
 		cin >> choice;
@@ -106,21 +108,25 @@ int main() {
 			else {
 				cout << "The Two Vectors Are Not Equal!" << endl;
 			}
+			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 2) { //Add
 			Add(A, B, C);
+			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 3) { //Subtract
 			Subtract(A, B, C);
+			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 4) { //Subtract
 			ScaleVector(A, af, B);
+			amountoftests += 1;
 			system("pause");
 		}
 
@@ -128,17 +134,26 @@ int main() {
 		else if (choice == 5) { //Magnitude
 			af = Magnitude(A);
 			cout << "Magnitude of Vector: " << af << endl;
+			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 6) { //Dot Product
 			af = DotProduct(A,B);
 			cout << "Dot Product of Vectors: " << af << endl;
+			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 7) { //CrossProduct
 			CrossProduct(A, B, C);
+			amountoftests += 1;
+			system("pause");
+		}
+
+		else if (choice == 8) { //Normalise
+			Normalise(A, B);
+			amountoftests += 1;
 			system("pause");
 		}
 

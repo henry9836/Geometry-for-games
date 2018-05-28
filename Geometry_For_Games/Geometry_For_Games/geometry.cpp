@@ -306,3 +306,57 @@ TVector3& CrossProduct(const TVector3& _krA, const TVector3& _krB, TVector3& _rR
 
 	return _rResultant;
 }
+
+TVector3& Normalise(const TVector3& _krA, TVector3& _rResultant) {
+	/*For any vector V = (x, y, z), |V| = sqrt(x*x + y*y + z*z) gives the length of the vector.
+
+When we normalize a vector, we actually calculate V/|V| = (x/|V|, y/|V|, z/|V|).
+
+It is easy to see that a normalized vector has length 1. This is because:
+
+| V/|V| | = sqrt((x/|V|)*(x/|V|) + (y/|V|)*(y/|V|) + (z/|V|)*(z/|V|))
+          = sqrt(x*x + y*y + z*z) / |V|
+          = |V| / |V|
+          = 1
+Hence, we can call normalized vectors as unit vectors (i.e. vectors with unit length).*/
+	
+
+
+
+	system("cls");
+	float iT = 0;
+	float AL = 0;
+	float BL = 0;
+
+	cout << "-= Vector 1 =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	AG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	AG.m_fY = getfloat(iT);
+
+	cout << "Z: ";
+	cin >> iT;
+	AG.m_fZ = getfloat(iT);
+
+	cout << endl << endl;
+
+	cout << "-= Vector 2 =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	BG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	BG.m_fY = getfloat(iT);
+
+	cout << "Z: ";
+	cin >> iT;
+	BG.m_fZ = getfloat(iT);
+
+	//AL = sqrt();
+
+	return _rResultant;
+}
