@@ -154,11 +154,9 @@ name of function : ScaleVector
 @return: _rResultant vector(struct)
 */
 TVector3& ScaleVector(const TVector3& _krA, const float _kfScalar, TVector3& _rResultant) {
+	
+
+
+	return  _rResultant;
 
 }
-
-EIntersections ComputeLineSphereIntersection(const T3DLine& _krLine, const TSphere& _krSphere, TVector3& _rv3IntersectionPoint1, TVector3& _rv3IntersectionPoint2) {
-
-
-}
-
