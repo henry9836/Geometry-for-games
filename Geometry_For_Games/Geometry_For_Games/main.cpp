@@ -91,7 +91,7 @@ int main() {
 		cout << "3. Subtract Two Vectors" << endl;
 		cout << "4. Scale A Vector" << endl;
 		cout << "99. Exit" << endl;
-		cout << "Please Choose an Option:";
+		cout << "Please Choose an Option: ";
 		cin >> choice;
 
 		if (choice == 1) { //Equals
@@ -102,26 +102,22 @@ int main() {
 			else {
 				cout << "The Two Vectors Are Not Equal!" << endl;
 			}
-			cout << "Press Enter To Return...";
-			cin >> iT;
+			system("pause");
 		}
 
 		else if (choice == 2) { //Add
 			Add(A, B, C);
-			cout << "Press Enter To Return...";
-			cin >> iT;
+			system("pause");
 		}
 
 		else if (choice == 3) { //Subtract
 			Subtract(A, B, C);
-			cout << "Press Enter To Return...";
-			cin >> iT;
+			system("pause");
 		}
 
 		else if (choice == 4) { //Subtract
 			ScaleVector(A, af, B);
-			cout << "Press Enter To Return...";
-			cin >> iT;
+			system("pause");
 		}
 
 		else if (choice == 99) {
