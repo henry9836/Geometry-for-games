@@ -146,3 +146,8 @@ TVector3& Subtract(const TVector3& _krA, const TVector3& _krB, TVector3& _rResul
 
 	return _rResultant;
 }
+
+EIntersections ComputeLineSphereIntersection(const T3DLine& _krLine, const TSphere& _krSphere, TVector3& _rv3IntersectionPoint1, TVector3& _rv3IntersectionPoint2) {
+
+
+}
