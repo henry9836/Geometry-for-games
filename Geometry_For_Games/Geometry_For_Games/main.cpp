@@ -90,6 +90,7 @@ int main() {
 		cout << "2. Add Two Vectors" << endl;
 		cout << "3. Subtract Two Vectors" << endl;
 		cout << "4. Scale A Vector" << endl;
+		cout << "5. Magnitude" << endl;
 		cout << "99. Exit" << endl;
 		cout << "Please Choose an Option: ";
 		cin >> choice;
@@ -117,6 +118,13 @@ int main() {
 
 		else if (choice == 4) { //Subtract
 			ScaleVector(A, af, B);
+			system("pause");
+		}
+
+
+		else if (choice == 5) { //Magnitude
+			af = Magnitude(A);
+			cout << "Magnitude of Vector: " << af << endl;
 			system("pause");
 		}
 

@@ -185,3 +185,32 @@ TVector3& ScaleVector(const TVector3& _krA, const float _kfScalar, TVector3& _rR
 	return  _rResultant;
 
 }
+
+/*
+name of function : Magnitude
+@author: Henry Oliver
+@parameter: Finds the magnitude of a vector
+@return: float (result)
+*/
+float Magnitude(const TVector3& _krA) {
+	system("cls");
+	float iT = 0;
+	float result = 0;
+
+	cout << "-= Vector =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	AG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	AG.m_fY = getfloat(iT);
+
+	cout << "Z: ";
+	cin >> iT;
+	AG.m_fZ = getfloat(iT);
+
+	result = sqrt((AG.m_fX*AG.m_fX) + (AG.m_fY*AG.m_fY) + (AG.m_fZ*AG.m_fZ));
+
+	return result;
+}
