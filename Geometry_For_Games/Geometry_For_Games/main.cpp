@@ -25,6 +25,12 @@ TVector3 B;
 TVector3 C;
 TVector3 D;
 
+float af;
+float bf;
+float cf;
+float df;
+
+
 using namespace std;
 /*
 name of function: GotoXY
@@ -83,6 +89,7 @@ int main() {
 		cout << "1. Vector Equals Vector" << endl;
 		cout << "2. Add Two Vectors" << endl;
 		cout << "3. Subtract Two Vectors" << endl;
+		cout << "4. Scale A Vector" << endl;
 		cout << "99. Exit" << endl;
 		cout << "Please Choose an Option:";
 		cin >> choice;
@@ -111,6 +118,11 @@ int main() {
 			cin >> iT;
 		}
 
+		else if (choice == 4) { //Subtract
+			ScaleVector(A, af, B);
+			cout << "Press Enter To Return...";
+			cin >> iT;
+		}
 
 		else if (choice == 99) {
 			break;

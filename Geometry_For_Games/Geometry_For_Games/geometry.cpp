@@ -155,7 +155,32 @@ name of function : ScaleVector
 */
 TVector3& ScaleVector(const TVector3& _krA, const float _kfScalar, TVector3& _rResultant) {
 	
+	system("cls");
+	float iT;
+	float scalar;
 
+	cout << "Scalar: ";
+	cin >> scalar;
+
+	cout << "-= Vector =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	iT = iT * scalar;
+	AG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	iT = iT * scalar;
+	AG.m_fY = getfloat(iT);
+
+	cout << "Z: ";
+	cin >> iT;
+	iT = iT * scalar;
+	AG.m_fZ = getfloat(iT);
+
+	cout << endl << endl;
+
+	cout << "Result: (" << AG.m_fX << ", " << AG.m_fY << ", " << AG.m_fZ << ")" << endl;
 
 	return  _rResultant;
 
