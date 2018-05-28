@@ -102,3 +102,7 @@ TVector3& Add(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant)
 
 	return _rResultant;
 }
+
+TVector3& Subtract(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
+
+}
