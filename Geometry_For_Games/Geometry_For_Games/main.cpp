@@ -1,11 +1,3 @@
-﻿/*
-
-Files to be created : main.cpp, geometry.h, geomtery.cpp, test.h, test.cpp 2. 
-
-Write your test cases such that code keeps track of how many test scenarios were run (by keeping the count of it) and OUTPUT it. 
-
-*/
-
 
 /*
 name of function: main
