@@ -27,6 +27,11 @@ T3DLine BL;
 T3DLine CL;
 T3DLine DL;
 
+TCircle AC;
+TCircle BC;
+TCircle CC;
+TCircle DC;
+
 float af;
 float bf;
 float cf;
@@ -96,7 +101,8 @@ int main() {
 		cout << "6. Dot Product" << endl;
 		cout << "7. CrossProduct" << endl;
 		cout << "8. Normalise" << endl;
-		cout << "18. LinePlaneIntersection" << endl;
+		cout << "15. Compute Distance Circle To Circle" << endl;
+		cout << "18. Line Plane Intersection" << endl;
 		cout << endl;
 		cout << "Tested: " << amountoftests << " times" << endl;
 		cout << "99. Exit" << endl;
@@ -156,6 +162,13 @@ int main() {
 
 		else if (choice == 8) { //Normalise
 			Normalise(A, B);
+			amountoftests += 1;
+			system("pause");
+		}
+
+
+		else if (choice == 15) { //ComputeDistanceCircleToCircle
+			ComputeDistanceCircleToCircle(AC, BC);
 			amountoftests += 1;
 			system("pause");
 		}
