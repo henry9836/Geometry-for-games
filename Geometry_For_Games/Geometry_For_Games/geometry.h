@@ -52,21 +52,21 @@ TVector3 m_v3center;
 float m_fRadius;
 };
 
-bool Equals(TVector3& _krA, TVector3& _krB);
+bool Equals(TVector3& _krA, TVector3& _krB); //done
 
-TVector3& Add(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant);
+TVector3& Add(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant); //done
 
-TVector3& Subtract(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant);
+TVector3& Subtract(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant); //done
 
-TVector3& ScaleVector(const TVector3& _krA, const float _kfScalar, TVector3& _rResultant);
+TVector3& ScaleVector(const TVector3& _krA, const float _kfScalar, TVector3& _rResultant); //done
 
-float Magnitude(const TVector3& _krA);
+float Magnitude(const TVector3& _krA); //done
 
-float DotProduct(const TVector3& _krA, const TVector3& _krB);
+float DotProduct(const TVector3& _krA, const TVector3& _krB); //done
 
-TVector3& CrossProduct(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant);
+TVector3& CrossProduct(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant); //done
 
-TVector3& Normalise(const TVector3& _krA, TVector3& _rResultant);
+TVector3& Normalise(const TVector3& _krA, TVector3& _rResultant); //done
 
 TVector3& Projection(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant);
 
@@ -82,16 +82,16 @@ float ComputeDistancePointToPlane(const TPlane& _krPlane, const TVector3& _krPoi
 float ComputeDistancePointToSphere(const TSphere& _krSphere, const TVector3& _krPoint); 
 
 //Distance between center of the circles 
-float ComputeDistanceCircleToCircle(const TCircle& _krCircle1, const TCircle& _krCircle2); 
+float ComputeDistanceCircleToCircle(const TCircle& _krCircle1, const TCircle& _krCircle2); //done
 
 //Distance between center of the circle and triangle 
 
 float ComputeDistanceCircleToTriangle(const TCircle& _krCircle, const TTriangle2& _krTriangle); 
 
 
-EIntersections ComputeLineSphereIntersection(const T3DLine& _krLine, const TSphere& _krSphere, TVector3& _rv3IntersectionPoint1, TVector3& _rv3IntersectionPoint2);
+EIntersections ComputeLineSphereIntersection(const T3DLine& _krLine, const TSphere& _krSphere, TVector3& _rv3IntersectionPoint1, TVector3& _rv3IntersectionPoint2); //done
 
-bool IsLinePlaneIntersection(const T3DLine& _krLine, const TPlane& _krPlane, TVector3& _rv3IntersectionPoint);
+bool IsLinePlaneIntersection(const T3DLine& _krLine, const TPlane& _krPlane, TVector3& _rv3IntersectionPoint); //done
 
 bool IsIntersection(const T3DLine& _krLine1, const T3DLine& _krLine2);
 
