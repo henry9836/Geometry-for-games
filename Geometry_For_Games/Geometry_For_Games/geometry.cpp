@@ -60,7 +60,7 @@ bool Equals(TVector3& _krA, TVector3& _krB) {
 name of function: Add
 @author: Henry Oliver
 @parameter: adds two vectors
-@return: result vector (struct)
+@return: _rResultant vector (struct)
 */
 
 TVector3& Add(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
@@ -106,7 +106,7 @@ TVector3& Add(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant)
 name of function : Subtract
 @author: Henry Oliver
 @parameter: Subtracts two vectors
-@return: result vector(struct)
+@return: _rResultant vector(struct)
 */
 TVector3& Subtract(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
 	system("cls");
@@ -147,7 +147,18 @@ TVector3& Subtract(const TVector3& _krA, const TVector3& _krB, TVector3& _rResul
 	return _rResultant;
 }
 
+/*
+name of function : ScaleVector
+@author: Henry Oliver
+@parameter: Scales a Vector
+@return: _rResultant vector(struct)
+*/
+TVector3& ScaleVector(const TVector3& _krA, const float _kfScalar, TVector3& _rResultant) {
+
+}
+
 EIntersections ComputeLineSphereIntersection(const T3DLine& _krLine, const TSphere& _krSphere, TVector3& _rv3IntersectionPoint1, TVector3& _rv3IntersectionPoint2) {
 
 
 }
+
