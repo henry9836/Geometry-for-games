@@ -60,10 +60,10 @@ name of function: Add
 */
 
 TVector3& Add(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
-	/*
+	
 	system("cls");
 	float iT = 0;
-
+	/*
 	cout << "-= Vector 1 =-" << endl;
 	cout << "X: ";
 	cin >> iT;
@@ -90,11 +90,12 @@ TVector3& Add(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant)
 	cin >> iT;
 	_krB.m_fZ = getfloat(iT);
 */
+
 	_rResultant.m_fX = (_krB.m_fX + _krA.m_fX);
 	_rResultant.m_fY = (_krB.m_fY + _krA.m_fY);
 	_rResultant.m_fZ = (_krB.m_fZ + _krA.m_fZ);
-/*
+
 	cout << "Result: (" << _rResultant.m_fX << ", " << _rResultant.m_fY << ", " << _rResultant.m_fZ << ")" << endl;
-*/
+
 	return _rResultant;
 }
