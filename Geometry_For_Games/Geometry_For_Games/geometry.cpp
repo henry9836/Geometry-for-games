@@ -58,6 +58,8 @@ name of function: Add
 @parameter: adds two vectors
 @return: result vector (struct)
 */
+
+//
 TVector3& Add(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
 	/*
 	system("cls");
