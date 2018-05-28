@@ -216,9 +216,9 @@ float Magnitude(const TVector3& _krA) {
 }
 
 /*
-name of function : Magnitude
+name of function : DotProduct
 @author: Henry Oliver
-@parameter: Finds the magnitude of a vector
+@parameter: Finds the DotProduct of two vectors
 @return: float (result)
 */
 float DotProduct(const TVector3& _krA, const TVector3& _krB) {
@@ -259,7 +259,50 @@ float DotProduct(const TVector3& _krA, const TVector3& _krB) {
 	return result;
 }
 
-
+/*
+name of function : CrossProduct
+@author: Henry Oliver
+@parameter: Finds the CrossProduct of two vectors
+@return: _rResultant (struct)
+*/
 TVector3& CrossProduct(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
 
+	system("cls");
+	float iT = 0;
+
+	cout << "-= Vector 1 =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	AG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	AG.m_fY = getfloat(iT);
+
+	cout << "Z: ";
+	cin >> iT;
+	AG.m_fZ = getfloat(iT);
+
+	cout << endl << endl;
+
+	cout << "-= Vector 2 =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	BG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	BG.m_fY = getfloat(iT);
+
+	cout << "Z: ";
+	cin >> iT;
+	BG.m_fZ = getfloat(iT);
+
+	CG.m_fX = ((AG.m_fY*BG.m_fZ) - (AG.m_fZ*BG.m_fY));
+	CG.m_fY = ((AG.m_fZ*BG.m_fX) - (AG.m_fX*BG.m_fZ));
+	CG.m_fZ = ((AG.m_fX*BG.m_fY) - (AG.m_fY*BG.m_fX));
+
+	cout << "Result: (" << CG.m_fX << ", " << CG.m_fY << ", " << CG.m_fZ << ")" << endl;
+
+	return _rResultant;
 }

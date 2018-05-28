@@ -85,13 +85,15 @@ int main() {
 	int choice = -1;
 	while (choice != 99) {
 		system("cls");
-		cout << "Main Menu" << endl;
+		cout << "-= Main Menu =-" << endl << endl;
 		cout << "1. Vector Equals Vector" << endl;
 		cout << "2. Add Two Vectors" << endl;
 		cout << "3. Subtract Two Vectors" << endl;
 		cout << "4. Scale A Vector" << endl;
 		cout << "5. Magnitude" << endl;
 		cout << "6. Dot Product" << endl;
+		cout << "7. CrossProduct" << endl;
+		cout << endl;
 		cout << "99. Exit" << endl;
 		cout << "Please Choose an Option: ";
 		cin >> choice;
@@ -135,7 +137,7 @@ int main() {
 			system("pause");
 		}
 
-		else if (choice == 7) { //Dot Product
+		else if (choice == 7) { //CrossProduct
 			CrossProduct(A, B, C);
 			system("pause");
 		}
