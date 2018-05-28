@@ -17,6 +17,16 @@ TVector3 B;
 TVector3 C;
 TVector3 D;
 
+TPlane AP;
+TPlane BP;
+TPlane CP;
+TPlane DP;
+
+T3DLine AL;
+T3DLine BL;
+T3DLine CL;
+T3DLine DL;
+
 float af;
 float bf;
 float cf;
@@ -86,6 +96,7 @@ int main() {
 		cout << "6. Dot Product" << endl;
 		cout << "7. CrossProduct" << endl;
 		cout << "8. Normalise" << endl;
+		cout << "18. LinePlaneIntersection" << endl;
 		cout << endl;
 		cout << "Tested: " << amountoftests << " times" << endl;
 		cout << "99. Exit" << endl;
@@ -145,6 +156,12 @@ int main() {
 
 		else if (choice == 8) { //Normalise
 			Normalise(A, B);
+			amountoftests += 1;
+			system("pause");
+		}
+
+		else if (choice == 18) { //LinePlaneIntersection
+			IsLinePlaneIntersection( AL , AP , A);
 			amountoftests += 1;
 			system("pause");
 		}

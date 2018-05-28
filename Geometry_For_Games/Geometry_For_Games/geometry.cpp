@@ -306,7 +306,12 @@ TVector3& CrossProduct(const TVector3& _krA, const TVector3& _krB, TVector3& _rR
 
 	return _rResultant;
 }
-
+/*
+name of function : Normalise
+@author: Henry Oliver
+@parameter: Normalises a vector
+@return: _rResultant (struct)
+*/
 TVector3& Normalise(const TVector3& _krA, TVector3& _rResultant) {
 	/*For any vector V = (x, y, z), |V| = sqrt(x*x + y*y + z*z) gives the length of the vector.
 
@@ -319,7 +324,7 @@ It is easy to see that a normalized vector has length 1. This is because:
           = |V| / |V|
           = 1
 Hence, we can call normalized vectors as unit vectors (i.e. vectors with unit length).*/
-
+	/*
 
 
 
@@ -358,20 +363,91 @@ Hence, we can call normalized vectors as unit vectors (i.e. vectors with unit le
 
 	//|V| = sqrt(x*x + y*y + z*z)
 	AL = sqrt((BG.m_fX * AG.m_fX)+(BG.m_fY * AG.m_fY)+(BG.m_fZ * AG.m_fZ));
-/*
+
 	//V/|V| = (x/|V|, y/|V|, z/|V|).
 	BL = ((/AL)(/AL)(/AL));
 
 
 	//sqrt(x*x + y*y + z*z) / |V|
 	BL = (sqrt((BG.m_fX * AG.m_fX)+(BG.m_fY * AG.m_fY)+(BG.m_fZ * AG.m_fZ)) / AL);
-*/
+
 
 	CG.m_fX = (AG.m_fX/AL);
 	CG.m_fY = (AG.m_fY/AL);
 	CG.m_fZ = (AG.m_fZ/AL);
 
 	cout << "Normalised Vector Result: (" << CG.m_fX << ", " << CG.m_fY << ", " << CG.m_fZ << ")" << endl; 
-
+	*/
 	return _rResultant;
+}
+
+/*
+name of function : IsLinePlaneIntersection
+@author: Andres Villacreces
+@parameter: Find the Distance Between a Line and a Plane 
+@return: _rResultant (struct)
+*/
+bool IsLinePlaneIntersection(const T3DLine& _krLine, const TPlane& _krPlane, TVector3& _rv3IntersectionPoint) {
+
+	system("cls");
+
+	float X, Y, Z, Value_t, dx, dy, dz, x1, x0, y1, y0, z1, z0, m, n, c;
+
+	std::cout << "COMPUTING LINE AND PLANE INTERSECTION:" << endl << endl;
+
+	std::cout << "1) Defining the 3D LINE:" << endl << endl;
+
+	std::cout << " Enter the Values for the X-Point" << endl;
+	std::cout << "   * x1-- ";
+	std::cin >> x1;
+	std::cout << "   * x0-- ";
+	std::cin >> x0;
+	std::cout << " Enter the Values for the Y-Point" << endl;
+	std::cout << "   * y1-- ";
+	std::cin >> y1;
+	std::cout << "   * y0-- ";
+	std::cin >> y0;
+	std::cout << " Enter the Values for the Z-Point" << endl;
+	std::cout << "   * z1-- ";
+	std::cin >> z1;
+	std::cout << "   * z0-- ";
+	std::cin >> z0;
+
+	dx = x1 - x0;
+	dy = y1 - y0;
+	dz = z1 - z0;
+	
+	cout << endl;
+	std::cout << "  The 3D LINE is Defined by:" << endl;
+	std::cout << "  * " << "x" << " = " << dx << "t" << ((x0 < 0) ? ' ' : '+') << x0 << "\n";
+	std::cout << "  * " << "y" << " = " << dy << "t" << ((y0 < 0) ? ' ' : '+') << y0 << "\n";
+	std::cout << "  * " << "z" << " = " << dz << "t" << ((z0 < 0) ? ' ' : '+') << z0 << "\n";
+	cout << endl << endl;
+
+	std::cout << "2) Finding the EQUATION for the PLANE" << endl << endl;
+	std::cout << "  * Enter the Slope of the Line on the y-z Plane: ";
+	std::cin >> m;
+	std::cout << "  * Enter the Slope of the Line on the y-z Plane: ";
+	std::cin >> n;
+	std::cout << "  * Enter the 'y' Value of the Plane at the Point (0,0,0): ";
+	std::cin >> c;
+	cout << endl;
+
+	std::cout << "  The Equation for the PLANE is: " << endl;
+	std::cout << "  * " << "y" << " = " << m << "x" << " + " << n << "z" << " + " << c << "\n";
+	cout << endl << endl;		std::cout << "3) Finding Point of Intersection of PLANE with LINE" << endl << endl;
+
+	std::cout << "    Using Quadratic Equation to Find the Points" << endl;
+
+	Value_t = (c + m * x0 + n * z0 - y0) / (m * x0 - m * x1 + n * z0 - n * z1 - y0 + y1);
+	std::cout << "     * t_Value = " << Value_t << endl;
+
+	X = Value_t * (x1 - x0) + x0;
+	Y = Value_t * (y1 - y0) + y0;
+	Z = Value_t * (z1 - z0) + z0;
+
+	std::cout << "  Point of Intersection" << endl;
+	std::cout << "    P: " << "(" << X << " , " << Y << " , " << Z << ")" << endl;
+
+	return true;
 }
