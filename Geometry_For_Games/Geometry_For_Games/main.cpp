@@ -106,6 +106,7 @@ int main() {
 		cout << "6. Dot Product" << endl;
 		cout << "7. CrossProduct" << endl;
 		cout << "8. Normalise" << endl;
+		cout << "9. Projection" << endl;
 		cout << "13. Compute Distance Point To Plane" << endl;
 		cout << "14. Compute Distance Point To Sphere" << endl;
 		cout << "15. Compute Distance Circle To Circle" << endl;
@@ -169,6 +170,12 @@ int main() {
 
 		else if (choice == 8) { //Normalise
 			Normalise(A, B);
+			amountoftests += 1;
+			system("pause");
+		}
+
+		else if (choice == 9) { //Projection
+			Projection(A, B, C);
 			amountoftests += 1;
 			system("pause");
 		}

@@ -347,8 +347,64 @@ TVector3& Normalise(const TVector3& _krA, TVector3& _rResultant) {
 
 	cout << "Normalised Vector Result: (" << CG.m_fX << ", " << CG.m_fY << ", " << CG.m_fZ << ")" << endl; 
 
+
+
 	return _rResultant;
 }
+
+/*
+name of function : Projection
+@author: Henry Oliver
+@parameter: Projects Two Vectors
+@return: _rResultant (struct)
+*/
+TVector3& Projection(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
+
+	system("cls");
+	float iT = 0;
+	float dot_p = 0;
+	float mag = 0;
+	float ans = 0;
+
+	cout << "-= Vector 1 =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	AG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	AG.m_fY = getfloat(iT);
+
+	cout << "Z: ";
+	cin >> iT;
+	AG.m_fZ = getfloat(iT);
+
+	cout << endl << endl;
+
+	cout << "-= Vector 2 =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	BG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	BG.m_fY = getfloat(iT);
+
+	cout << "Z: ";
+	cin >> iT;
+	BG.m_fZ = getfloat(iT);
+
+	dot_p = ((AG.m_fX*BG.m_fX)+(AG.m_fY*BG.m_fY)+(AG.m_fZ * BG.m_fZ));
+
+	mag = (sqrt((BG.m_fX*BG.m_fX)+(BG.m_fY*BG.m_fY)+(BG.m_fZ*BG.m_fZ)));
+
+	ans = (dot_p / mag);
+
+	cout << "Projection: " << ans << endl;
+
+	return _rResultant;
+}
+
 
 /*
 name of function : ComputeDistancePointToPlane
