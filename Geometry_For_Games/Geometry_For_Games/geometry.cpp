@@ -410,7 +410,7 @@ TVector3& Projection(const TVector3& _krA, const TVector3& _krB, TVector3& _rRes
 }
 
 /*
-name of function : Projection
+name of function : ComputeAngleBetween
 @author: Henry Oliver
 @parameter: Computes Angles Between Two Vectors
 @return: float
@@ -464,6 +464,72 @@ float ComputeAngleBetween(const TVector2& _krA, const TVector2& _krB) {
 
 	return ans;
 }
+
+/*
+name of function : ComputeAngleBetween
+@author: Henry Oliver
+@parameter: Computes Angles Between Two 3AxisVectors
+@return: float
+*/
+float ComputeAngleBetween(const TVector3& _krA, const TVector3& _krB) {
+
+	system("cls");
+	float iT = 0;
+	float dot_p = 0;
+	float mag = 0;
+	float ans = 0;
+	float length_A;
+	float length_B;
+	float dot_product;
+
+	cout << "-= Vector 1 =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	AG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	AG.m_fY = getfloat(iT);
+
+	cout << "Z: ";
+	cin >> iT;
+	AG.m_fZ = getfloat(iT);
+
+	cout << endl << endl;
+
+	cout << "-= Vector 2 =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	BG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	BG.m_fY = getfloat(iT);
+
+	cout << "Z: ";
+	cin >> iT;
+	BG.m_fZ = getfloat(iT);
+
+	length_A = sqrt((AG.m_fX * AG.m_fX) + (AG.m_fY * AG.m_fY) + (AG.m_fZ * AG.m_fZ));
+	length_B = sqrt((BG.m_fX * BG.m_fX) + (BG.m_fY * BG.m_fY) + (BG.m_fZ * BG.m_fZ));
+
+	dot_product = ((AG.m_fX * BG.m_fX) + (AG.m_fY * BG.m_fY) + (AG.m_fZ * BG.m_fZ));
+
+	ans = (dot_product / (length_A * length_B));
+
+	ans = acos(ans);
+
+	iT = ans;
+
+	ans = (ans * 180 / PI);
+
+	cout << "The Angle Between The Two Vectors is: " << ans << " Degrees" << endl;
+	cout << "Or: " << iT << " Radians" << endl;
+
+	return ans;
+}
+
+
 
 /*
 name of function : ComputeDistancePointToPlane
