@@ -316,20 +316,6 @@ name of function : Normalise
 @return: _rResultant (struct)
 */
 TVector3& Normalise(const TVector3& _krA, TVector3& _rResultant) {
-	/*For any vector V = (x, y, z), |V| = sqrt(x*x + y*y + z*z) gives the length of the vector.
-
-When we normalize a vector, we actually calculate V/|V| = (x/|V|, y/|V|, z/|V|).
-
-It is easy to see that a normalized vector has length 1. This is because:
-
-| V/|V| | = sqrt((x/|V|)*(x/|V|) + (y/|V|)*(y/|V|) + (z/|V|)*(z/|V|))
-          = sqrt(x*x + y*y + z*z) / |V|
-          = |V| / |V|
-          = 1
-Hence, we can call normalized vectors as unit vectors (i.e. vectors with unit length).*/
-	/*
-
-
 
 	system("cls");
 	float iT = 0;
@@ -350,22 +336,17 @@ Hence, we can call normalized vectors as unit vectors (i.e. vectors with unit le
 	AG.m_fZ = getfloat(iT);
 
 	//|V| = sqrt(x*x + y*y + z*z)
-	AL = sqrt((BG.m_fX * AG.m_fX)+(BG.m_fY * AG.m_fY)+(BG.m_fZ * AG.m_fZ));
 
-	//V/|V| = (x/|V|, y/|V|, z/|V|).
-	BL = ((/AL)(/AL)(/AL));
+	AL = sqrt((AG.m_fX * AG.m_fX)+(AG.m_fY * AG.m_fY)+(AG.m_fZ * AG.m_fZ));
 
-
-	//sqrt(x*x + y*y + z*z) / |V|
-	BL = (sqrt((BG.m_fX * AG.m_fX)+(BG.m_fY * AG.m_fY)+(BG.m_fZ * AG.m_fZ)) / AL);
-
+	//V/|V| = (x/|V|, y/|V|, z/|V|)
 
 	CG.m_fX = (AG.m_fX/AL);
 	CG.m_fY = (AG.m_fY/AL);
 	CG.m_fZ = (AG.m_fZ/AL);
 
 	cout << "Normalised Vector Result: (" << CG.m_fX << ", " << CG.m_fY << ", " << CG.m_fZ << ")" << endl; 
-	*/
+
 	return _rResultant;
 }
 
