@@ -79,7 +79,7 @@ float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoin
 float ComputeDistancePointToPlane(const TPlane& _krPlane, const TVector3& _krPoint);
 
 //Distance between point and center of the spheres
-float ComputeDistancePointToSphere(const TSphere& _krSphere, const TVector3& _krPoint); 
+float ComputeDistancePointToSphere(const TSphere& _krSphere, const TVector3& _krPoint); //done
 
 //Distance between center of the circles 
 float ComputeDistanceCircleToCircle(const TCircle& _krCircle1, const TCircle& _krCircle2); //done

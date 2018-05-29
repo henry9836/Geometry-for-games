@@ -371,6 +371,109 @@ Hence, we can call normalized vectors as unit vectors (i.e. vectors with unit le
 
 
 
+/*
+name of function : Compute Distance Point To Sphere
+@author: Andres Villacreces
+@parameter: Find the Distance Between From a point to a Plane
+@return: float
+*/
+float ComputeDistancePointToPlane(const TPlane& _krPlane, const TVector3& _krPoint) {
+
+	system("cls");
+
+	float x, y, z, A, B, C, D, d;
+
+	std::cout << "Computingthe the Distance Between POINT to PLANE:" << endl << endl;
+
+	std::cout << "1) Enter the Coordinates of the Point:" << endl << endl;
+
+	std::cout << "      Enter the Coordinate x-- ";
+	std::cin >> x;
+	std::cout << "      Enter the Coordinate y-- ";
+	std::cin >> y;
+	std::cout << "      Enter the Coordinate Z-- ";
+	std::cin >> z;
+	cout << endl;
+
+	std::cout << "  The 3D Coordinate is:" << endl;
+	std::cout << "    * " << "(" << x << " , " << y << " , " << z << ")" << "\n";
+	cout << endl << endl;
+
+	std::cout << "2) Finding the EQUATION for the PLANE" << endl << endl;
+	std::cout << "  * Enter the Point A (Normal Vector): ";
+	std::cin >> A;
+	std::cout << "  * Enter the Point B (Normal Vector): ";
+	std::cin >> B;
+	std::cout << "  * Enter the Point C (Normal Vector): ";
+	std::cin >> C;
+	std::cout << "  * Enter the Point D (Normal Vector): ";
+	std::cin >> D;
+	cout << endl;
+
+	std::cout << "  The Equation for the PLANE is: " << endl;
+	std::cout << "  * " << A << "x" << " + " << B << "y" << " + " << C << "z" << " + " << D << " = " << 0 << "\n";
+	cout << endl << endl;
+
+
+	std::cout << "3) Finding the Distance Between POINT and Center of the SPHERE:" << endl << endl;
+	d = (A * x + B * y + C * z + D) / (sqrt((pow((A), 2)) + (pow((B), 2)) + (pow((C), 2))));
+	std::cout << "    The Distance Between POINT and Center of the SPHERE is:  " << endl << "     * " << "[" << d << "]" << endl;
+	cout << endl;
+
+	return 0.0;
+}
+
+/*
+name of function : Compute Distance Point To Sphere
+@author: Andres Villacreces
+@parameter: Find the Distance Between a point and a Sphere
+@return: float
+*/
+float ComputeDistancePointToSphere(const TSphere& _krSphere, const TVector3& _krPoint){
+
+system("cls");
+
+	float x, y, z, h, k, j, r, d;
+
+	std::cout << "Computingthe the Distance Between POINT and Center of the SPHERE:" << endl << endl;
+
+	std::cout << "1) Enter the Coordinates of the Point:" << endl << endl;
+
+	std::cout << "      Enter the Coordinate x-- ";
+	std::cin >> x;
+	std::cout << "      Enter the Coordinate y-- ";
+	std::cin >> y;
+	std::cout << "      Enter the Coordinate Z-- ";
+	std::cin >> z;
+	cout << endl;
+
+	std::cout << "  The 3D Coordinate is:" << endl;
+	std::cout << "    * " << "(" << x << " , " << y << " , " << z << ")" << "\n";
+	cout << endl << endl;
+
+	std::cout << "2) Defining the EQUATION for the SPHERE" << endl << endl;
+	std::cout << "   * Enter the Value 'h'-- ";
+	std::cin >> h;
+	std::cout << "   * Enter the Value 'k'-- ";
+	std::cin >> k;
+	std::cout << "   * Enter the Value 'j'-- ";
+	std::cin >> j;
+	std::cout << "   * Enter the Value 'r'-- ";
+	std::cin >> r;
+	cout << endl;
+
+	std::cout << "  The Equation for the SPHERE is: " << endl;
+	std::cout << "    * " << "[" << "(" << "x" << " - " << h << ")" << "^" << 2 << "]" << " + " << "[" << "(" << "y" << " - " << k << ")" << "^" << 2 << "]"
+		<< " + " << "[" << "(" << "z" << " - " << j << ")" << "^" << 2 << "]" << " = " << "(" << r << ")" << "^" << 2 << "\n";
+	cout << endl << endl;
+
+	std::cout << "3) Finding the Distance Between POINT and Center of the SPHERE:" << endl << endl;
+	d = sqrt((pow((x - h), 2)) + (pow((y - k), 2)) + (pow((z - j), 2))) - r;
+	std::cout << "    The Distance Between POINT and Center of the SPHERE is:  " << endl << "     * " << "[" << d << "]" << endl;
+	cout << endl;
+
+	return 0.0;
+}
 
 /*
 name of function : ComputeDistanceCircleToCircle

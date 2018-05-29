@@ -32,6 +32,11 @@ TCircle BC;
 TCircle CC;
 TCircle DC;
 
+TSphere AS;
+TSphere BS;
+TSphere CS;
+TSphere DS;
+
 float af;
 float bf;
 float cf;
@@ -101,6 +106,8 @@ int main() {
 		cout << "6. Dot Product" << endl;
 		cout << "7. CrossProduct" << endl;
 		cout << "8. Normalise" << endl;
+		cout << "13. Compute Distance Point To Plane" << endl;
+		cout << "14. Compute Distance Point To Sphere" << endl;
 		cout << "15. Compute Distance Circle To Circle" << endl;
 		cout << "18. Line Plane Intersection" << endl;
 		cout << endl;
@@ -166,6 +173,17 @@ int main() {
 			system("pause");
 		}
 
+		else if (choice == 13) { //ComputeDistancePointToPlane
+			ComputeDistancePointToPlane(AP, A);
+			amountoftests += 1;
+			system("pause");
+		}
+
+		else if (choice == 14) { //ComputeDistancePointToSphere
+			ComputeDistancePointToSphere(AS, A);
+			amountoftests += 1;
+			system("pause");
+		}
 
 		else if (choice == 15) { //ComputeDistanceCircleToCircle
 			ComputeDistanceCircleToCircle(AC, BC);
