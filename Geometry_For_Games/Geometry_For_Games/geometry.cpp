@@ -5,13 +5,17 @@
 
 using namespace std;
 
+#define PI 3.14159265
+
 TVector3 AG;
 TVector3 BG;
 TVector3 CG;
 TVector3 DG;
 
-
-
+TVector2 TwoAG;
+TVector2 TwoBG;
+TVector2 TwoCG;
+TVector2 TwoDG;
 
 /*
 name of function: Equals
@@ -405,6 +409,61 @@ TVector3& Projection(const TVector3& _krA, const TVector3& _krB, TVector3& _rRes
 	return _rResultant;
 }
 
+/*
+name of function : Projection
+@author: Henry Oliver
+@parameter: Computes Angles Between Two Vectors
+@return: float
+*/
+float ComputeAngleBetween(const TVector2& _krA, const TVector2& _krB) {
+
+	system("cls");
+	float iT = 0;
+	float dot_p = 0;
+	float mag = 0;
+	float ans = 0;
+	float length_A;
+	float length_B;
+	float dot_product;
+
+	cout << "-= Vector 1 =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	TwoAG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	TwoAG.m_fY = getfloat(iT);
+
+	cout << endl << endl;
+
+	cout << "-= Vector 2 =-" << endl;
+	cout << "X: ";
+	cin >> iT;
+	TwoBG.m_fX = getfloat(iT);
+
+	cout << "Y: ";
+	cin >> iT;
+	TwoBG.m_fY = getfloat(iT);
+
+	length_A = sqrt((TwoAG.m_fX * TwoAG.m_fX) + (TwoAG.m_fY * TwoAG.m_fY));
+	length_B = sqrt((TwoBG.m_fX * TwoBG.m_fX) + (TwoBG.m_fY * TwoBG.m_fY));
+
+	dot_product = ((TwoAG.m_fX * TwoBG.m_fX)+(TwoAG.m_fY * TwoBG.m_fY));
+
+	ans = (dot_product / (length_A * length_B));
+
+	ans = acos(ans);
+
+	iT = ans;
+
+	ans = (ans * 180 / PI);
+
+	cout << "The Angle Between The Two Vectors is: " << ans << " Degrees" << endl;
+	cout << "Or: " << iT << " Radians" << endl;
+
+	return ans;
+}
 
 /*
 name of function : ComputeDistancePointToPlane

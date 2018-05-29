@@ -68,9 +68,9 @@ TVector3& CrossProduct(const TVector3& _krA, const TVector3& _krB, TVector3& _rR
 
 TVector3& Normalise(const TVector3& _krA, TVector3& _rResultant); //done
 
-TVector3& Projection(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant);
+TVector3& Projection(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant); //done
 
-float ComputeAngleBetween(const TVector2& _krA, const TVector2& _krB);
+float ComputeAngleBetween(const TVector2& _krA, const TVector2& _krB); //done
 
 float ComputeAngleBetween(const TVector3& _krA, const TVector3& _krB);
 
