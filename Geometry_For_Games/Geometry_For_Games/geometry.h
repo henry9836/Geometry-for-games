@@ -76,7 +76,7 @@ float ComputeAngleBetween(const TVector3& _krA, const TVector3& _krB);
 
 float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoint);
 
-float ComputeDistancePointToPlane(const TPlane& _krPlane, const TVector3& _krPoint);
+float ComputeDistancePointToPlane(const TPlane& _krPlane, const TVector3& _krPoint); //done
 
 //Distance between point and center of the spheres
 float ComputeDistancePointToSphere(const TSphere& _krSphere, const TVector3& _krPoint); //done

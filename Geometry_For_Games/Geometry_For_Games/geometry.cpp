@@ -369,12 +369,10 @@ Hence, we can call normalized vectors as unit vectors (i.e. vectors with unit le
 	return _rResultant;
 }
 
-
-
 /*
-name of function : Compute Distance Point To Sphere
+name of function : ComputeDistancePointToPlane
 @author: Andres Villacreces
-@parameter: Find the Distance Between From a point to a Plane
+@parameter: Find the Distance From a point to a Plane
 @return: float
 */
 float ComputeDistancePointToPlane(const TPlane& _krPlane, const TVector3& _krPoint) {
@@ -383,7 +381,7 @@ float ComputeDistancePointToPlane(const TPlane& _krPlane, const TVector3& _krPoi
 
 	float x, y, z, A, B, C, D, d;
 
-	std::cout << "Computingthe the Distance Between POINT to PLANE:" << endl << endl;
+	std::cout << "COMPUTING DISTANCE FROM ANY POINT TO A PLANE:" << endl << endl;
 
 	std::cout << "1) Enter the Coordinates of the Point:" << endl << endl;
 
@@ -400,13 +398,13 @@ float ComputeDistancePointToPlane(const TPlane& _krPlane, const TVector3& _krPoi
 	cout << endl << endl;
 
 	std::cout << "2) Finding the EQUATION for the PLANE" << endl << endl;
-	std::cout << "  * Enter the Point A (Normal Vector): ";
+	std::cout << "  * Enter the Point A (Vector): ";
 	std::cin >> A;
-	std::cout << "  * Enter the Point B (Normal Vector): ";
+	std::cout << "  * Enter the Point B (Vector): ";
 	std::cin >> B;
-	std::cout << "  * Enter the Point C (Normal Vector): ";
+	std::cout << "  * Enter the Point C (Vector): ";
 	std::cin >> C;
-	std::cout << "  * Enter the Point D (Normal Vector): ";
+	std::cout << "  * Enter the Point D (Vector): ";
 	std::cin >> D;
 	cout << endl;
 
@@ -415,18 +413,18 @@ float ComputeDistancePointToPlane(const TPlane& _krPlane, const TVector3& _krPoi
 	cout << endl << endl;
 
 
-	std::cout << "3) Finding the Distance Between POINT and Center of the SPHERE:" << endl << endl;
+	std::cout << "3) Finding the Distance From a POINT to a PLANE:" << endl << endl;
 	d = (A * x + B * y + C * z + D) / (sqrt((pow((A), 2)) + (pow((B), 2)) + (pow((C), 2))));
-	std::cout << "    The Distance Between POINT and Center of the SPHERE is:  " << endl << "     * " << "[" << d << "]" << endl;
+	std::cout << "    The Distance From a POINT to a PLANE is:  " << endl << "     * " << "[" << d << "]" << endl;
 	cout << endl;
 
 	return 0.0;
 }
 
 /*
-name of function : Compute Distance Point To Sphere
+name of function : ComputeDistancePointToSphere
 @author: Andres Villacreces
-@parameter: Find the Distance Between a point and a Sphere
+@parameter: Find the Distance Between a point and the Center of a Sphere
 @return: float
 */
 float ComputeDistancePointToSphere(const TSphere& _krSphere, const TVector3& _krPoint){
@@ -435,7 +433,7 @@ system("cls");
 
 	float x, y, z, h, k, j, r, d;
 
-	std::cout << "Computingthe the Distance Between POINT and Center of the SPHERE:" << endl << endl;
+	std::cout << "COMPUTING DISTANCE BETWEEN POINT AND CENTER OF THE SPHERE:" << endl << endl;
 
 	std::cout << "1) Enter the Coordinates of the Point:" << endl << endl;
 
@@ -485,38 +483,38 @@ float ComputeDistanceCircleToCircle(const TCircle& _krCircle1, const TCircle& _k
 
 system("cls");
 
-	float x1, y1, x2, y2, r1, r2, d;
+	float h1, h2, k2, k1, r1, r2, d;
 
-	std::cout << "Computing Line and Sphere Intersection:" << endl << endl;
+	std::cout << "COMPUTING DISTANCE BETWEEN THE CENTERS OF TWO CICLES:" << endl << endl;
 
 	std::cout << "1) Defining the EQUATION for the First CIRCLE:" << endl << endl;
 
-	std::cout << "      Enter the Coordinate x-- ";
-	std::cin >> x1;
-	std::cout << "      Enter the Coordinate y-- ";
-	std::cin >> y1;
+	std::cout << "      * Center of the Circle: Coordinate 'h'-- ";
+	std::cin >> h1;
+	std::cout << "      * Center of the Circle: Coordinate 'k'-- ";
+	std::cin >> k1;
 	std::cout << "      Enter the Radius-- ";
 	std::cin >> r1;
 	cout << endl;
 	std::cout << "  The EQUATION for the First Circle is:" << endl;
-	std::cout << "    * " << "(" << "x" << " - " << x1 << ")" << "^" << 2 << " + " << "(" << "y" << " - " << y1 << ")" << "^" << 2 << " = " << r1 << "^" << 2 << "\n";
+	std::cout << "    * " << "(" << "x" << " - " << h1 << ")" << "^" << 2 << " + " << "(" << "y" << " - " << k1 << ")" << "^" << 2 << " = " << r1 << "^" << 2 << "\n";
 	cout << endl << endl;
 
 	std::cout << "2) Defining the EQUATION for the Second CIRCLE:" << endl << endl;
 
-	std::cout << "      Enter the Coordinate x-- ";
-	std::cin >> x2;
-	std::cout << "      Enter the Coordinate y-- ";
-	std::cin >> y2;
+	std::cout << "      * Center of the Circle: Coordinate 'h'-- ";
+	std::cin >> h2;
+	std::cout << "      * Center of the Circle: Coordinate 'k'-- ";
+	std::cin >> k2;
 	std::cout << "      Enter the Radius-- ";
 	std::cin >> r2;
 	cout << endl;
 	std::cout << "  The EQUATION for the Second Circle is:" << endl;
-	std::cout << "    * " << "(" << "x" << " - " << x2 << ")" << "^" << 2 << " + " << "(" << "y" << " - " << y2 << ")" << "^" << 2 << " = " << r2 << "^" << 2 << "\n";
+	std::cout << "    * " << "(" << "x" << " - " << h2 << ")" << "^" << 2 << " + " << "(" << "y" << " - " << k2 << ")" << "^" << 2 << " = " << r2 << "^" << 2 << "\n";
 	cout << endl << endl;
 
 	std::cout << "3) Finding the Distance Between the Centers of TWO CIRCLES:" << endl << endl;
-	d = sqrt((pow((x2 - x1), 2)) + (pow((y2 - y1), 2)));
+	d = sqrt((pow((h2 - h1), 2)) + (pow((k2 - k1), 2)));
 	std::cout << "    The Distance Between the Centers of Two Circles is:  " << endl << "     * " << "[" << d << "]" << endl;
 	cout << endl;
 
@@ -588,7 +586,7 @@ bool IsLinePlaneIntersection(const T3DLine& _krLine, const TPlane& _krPlane, TVe
 	Y = Value_t * (y1 - y0) + y0;
 	Z = Value_t * (z1 - z0) + z0;
 
-	std::cout << "  Point of Intersection" << endl;
+	std::cout << "  The Point of Intersection Between a LINE AND a PLANE" << endl;
 	std::cout << "    P: " << "(" << X << " , " << Y << " , " << Z << ")" << endl;
 
 	return true;
