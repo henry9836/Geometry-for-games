@@ -396,6 +396,11 @@ float ComputeDistancePointToPlane(const TPlane& _krPlane, const TVector3& _krPoi
 
 	std::cout << "3) Finding the Distance From a POINT to a PLANE:" << endl << endl;
 	d = (A * x + B * y + C * z + D) / (sqrt((pow((A), 2)) + (pow((B), 2)) + (pow((C), 2))));
+
+	if (d < 0) {
+		d = d * -1;
+	}
+
 	std::cout << "    The Distance From a POINT to a PLANE is:  " << endl << "     * " << "[" << d << "]" << endl;
 	cout << endl;
 
