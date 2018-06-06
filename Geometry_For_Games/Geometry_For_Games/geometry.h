@@ -72,7 +72,7 @@ TVector3& Projection(const TVector3& _krA, const TVector3& _krB, TVector3& _rRes
 
 float ComputeAngleBetween(const TVector2& _krA, const TVector2& _krB); //done
 
-float ComputeAngleBetween(const TVector3& _krA, const TVector3& _krB);
+float ComputeAngleBetween(const TVector3& _krA, const TVector3& _krB); //done
 
 float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoint);
 

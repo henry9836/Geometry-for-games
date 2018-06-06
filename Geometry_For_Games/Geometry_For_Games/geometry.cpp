@@ -530,7 +530,6 @@ float ComputeAngleBetween(const TVector3& _krA, const TVector3& _krB) {
 }
 
 
-
 /*
 name of function : ComputeDistancePointToPlane
 @author: Andres Villacreces
