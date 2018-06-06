@@ -17,6 +17,11 @@ TVector3 B;
 TVector3 C;
 TVector3 D;
 
+TVector2 TwoA;
+TVector2 TwoB;
+TVector2 TwoC;
+TVector2 TwoD;
+
 TPlane AP;
 TPlane BP;
 TPlane CP;
@@ -106,6 +111,9 @@ int main() {
 		cout << "6. Dot Product" << endl;
 		cout << "7. CrossProduct" << endl;
 		cout << "8. Normalise" << endl;
+		cout << "9. Projection" << endl;
+		cout << "10. Compute Angle Between Two Vector2s" << endl;
+		cout << "11. Compute Angle Between Two Vector3s" << endl;
 		cout << "13. Compute Distance Point To Plane" << endl;
 		cout << "14. Compute Distance Point To Sphere" << endl;
 		cout << "15. Compute Distance Circle To Circle" << endl;
@@ -169,6 +177,24 @@ int main() {
 
 		else if (choice == 8) { //Normalise
 			Normalise(A, B);
+			amountoftests += 1;
+			system("pause");
+		}
+
+		else if (choice == 9) { //Projection
+			Projection(A, B, C);
+			amountoftests += 1;
+			system("pause");
+		}
+
+		else if (choice == 10) { //ComputeAngleBetween
+			ComputeAngleBetween(TwoA,TwoB);
+			amountoftests += 1;
+			system("pause");
+		}
+
+		else if (choice == 11) { //ComputeAngleBetween3v
+			ComputeAngleBetween(A, B);
 			amountoftests += 1;
 			system("pause");
 		}
