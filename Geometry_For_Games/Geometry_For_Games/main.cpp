@@ -114,6 +114,7 @@ int main() {
 		cout << "9. Projection" << endl;
 		cout << "10. Compute Angle Between Two Vector2s" << endl;
 		cout << "11. Compute Angle Between Two Vector3s" << endl;
+		cout << "12. Compute Distance Of Point To Line" << endl;
 		cout << "13. Compute Distance Point To Plane" << endl;
 		cout << "14. Compute Distance Point To Sphere" << endl;
 		cout << "15. Compute Distance Circle To Circle" << endl;
@@ -195,6 +196,12 @@ int main() {
 
 		else if (choice == 11) { //ComputeAngleBetween3v
 			ComputeAngleBetween(A, B);
+			amountoftests += 1;
+			system("pause");
+		}
+
+		else if (choice == 12) { //ComputeDistancePointToLine
+			ComputeDistancePointToLine(AL, A);
 			amountoftests += 1;
 			system("pause");
 		}

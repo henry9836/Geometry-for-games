@@ -11,6 +11,10 @@ TVector3 AG;
 TVector3 BG;
 TVector3 CG;
 TVector3 DG;
+TVector3 EG;
+TVector3 FG;
+TVector3 GG;
+TVector3 HG;
 
 TVector2 TwoAG;
 TVector2 TwoBG;
@@ -533,7 +537,12 @@ float ComputeAngleBetween(const TVector3& _krA, const TVector3& _krB) {
 
 	return ans;
 }
-
+/*
+name of function : ComputeDistancePointToLine
+@author: Henry Oliver
+@parameter: Computes Distance from a point to a line
+@return: float
+*/
 float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoint) {
 
 	float linebeginx;
@@ -549,6 +558,8 @@ float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoin
 	float linez;
 
 	float distance;
+
+	float iT;
 
 	cout << "-= Point =-" << endl;
 
@@ -580,10 +591,55 @@ float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoin
 
 	cout << "Line End Z: ";
 	cin >> lineendz;
+	
+	/* http://mathworld.wolfram.com/Point-LineDistance3-Dimensional.html */
 
-	distance = (1);
+	/* First part of equation */
 
+	CG.m_fX = (AG.m_fX - linebeginx);
+	CG.m_fY = (AG.m_fY - linebeginy);
+	CG.m_fZ = (AG.m_fZ - linebeginz);
+	DG.m_fX = (AG.m_fX - lineendx);
+	DG.m_fY = (AG.m_fY - lineendy);
+	DG.m_fZ = (AG.m_fZ - lineendz);
 
+	FG.m_fX = (CG.m_fX * DG.m_fX);
+	FG.m_fY = (CG.m_fY * DG.m_fY);
+	FG.m_fZ = (CG.m_fZ * DG.m_fZ);
+
+	/* Normalise FG INTO GG*/
+
+	iT = sqrt((FG.m_fX * FG.m_fX) + (FG.m_fY * FG.m_fY) + (FG.m_fZ * FG.m_fZ));
+	GG.m_fX = (FG.m_fX / iT);
+	GG.m_fY = (FG.m_fY / iT);
+	GG.m_fZ = (FG.m_fZ / iT);
+	
+	/* Second part of equation */
+
+	EG.m_fX = (lineendx - linebeginx);
+	EG.m_fY = (lineendy - linebeginy);
+	EG.m_fZ = (lineendz - linebeginz);
+	
+	/* Normalise EG INTO HG*/
+
+	iT = sqrt((EG.m_fX * EG.m_fX) + (EG.m_fY * EG.m_fY) + (EG.m_fZ * EG.m_fZ));
+	HG.m_fX = (EG.m_fX / iT);
+	HG.m_fY = (EG.m_fY / iT);
+	HG.m_fZ = (EG.m_fZ / iT);
+
+	/*distance = normalised FG / normalised EG*/
+
+	float x;
+	float y;
+	float z;
+
+	x = (GG.m_fX + HG.m_fX);
+	y = (GG.m_fY + HG.m_fY);
+	z = (GG.m_fZ + HG.m_fZ);
+
+	distance = (x+y+z);
+
+	cout << "Distance of Point from line is: " << distance;
 
 	return 0.0f;
 }
