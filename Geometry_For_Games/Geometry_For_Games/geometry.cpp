@@ -17,6 +17,11 @@ TVector2 TwoBG;
 TVector2 TwoCG;
 TVector2 TwoDG;
 
+T3DLine TLineA;
+T3DLine TLineB;
+T3DLine TLineC;
+T3DLine TLineD;
+
 /*
 name of function: Equals
 @author: Henry Oliver
@@ -529,7 +534,59 @@ float ComputeAngleBetween(const TVector3& _krA, const TVector3& _krB) {
 	return ans;
 }
 
+float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoint) {
 
+	float linebeginx;
+	float linebeginy;
+	float linebeginz;
+
+	float lineendx;
+	float lineendy;
+	float lineendz;
+
+	float linex;
+	float liney;
+	float linez;
+
+	float distance;
+
+	cout << "-= Point =-" << endl;
+
+	cout << "Point X: ";
+	cin >> AG.m_fX;
+
+	cout << "Point Y: ";
+	cin >> AG.m_fY;
+
+	cout << "Point Z: ";
+	cin >> AG.m_fZ;
+
+	cout << "-= Line =-" << endl;
+
+	cout << "Line Start X: ";
+	cin >> linebeginx;
+
+	cout << "Line Start Y: ";
+	cin >> linebeginy;
+
+	cout << "Line Start Z: ";
+	cin >> linebeginz;
+
+	cout << "Line End X: ";
+	cin >> lineendx;
+
+	cout << "Line End Y: ";
+	cin >> lineendy;
+
+	cout << "Line End Z: ";
+	cin >> lineendz;
+
+	distance = (1);
+
+
+
+	return 0.0f;
+}
 /*
 name of function : ComputeDistancePointToPlane
 @author: Andres Villacreces
