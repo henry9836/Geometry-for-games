@@ -1,1 +1,9 @@
-﻿  Geometry_For_Games.vcxproj -> D:\Users\Andres.Vil7740\Documents\GitHub\Geometry-for-games\Geometry_For_Games\Debug\Geometry_For_Games.exe
+﻿  geometry.cpp
+d:\users\andres.vil7740\documents\github\geometry-for-games\geometry_for_games\geometry_for_games\geometry.cpp(460): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\users\andres.vil7740\documents\github\geometry-for-games\geometry_for_games\geometry_for_games\geometry.cpp(524): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  main.cpp
+d:\users\andres.vil7740\documents\github\geometry-for-games\geometry_for_games\geometry_for_games\main.cpp(100): warning C4101: 'iT': unreferenced local variable
+  test.cpp
+  Generating Code...
+  LINK : D:\Users\Andres.Vil7740\Documents\GitHub\Geometry-for-games\Geometry_For_Games\Debug\Geometry_For_Games.exe not found or not built by the last incremental link; performing full link
+  Geometry_For_Games.vcxproj -> D:\Users\Andres.Vil7740\Documents\GitHub\Geometry-for-games\Geometry_For_Games\Debug\Geometry_For_Games.exe
