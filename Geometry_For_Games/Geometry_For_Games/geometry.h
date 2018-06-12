@@ -74,7 +74,7 @@ float ComputeAngleBetween(const TVector2& _krA, const TVector2& _krB); //done
 
 float ComputeAngleBetween(const TVector3& _krA, const TVector3& _krB); //done
 
-float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoint);
+float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoint); //done
 
 float ComputeDistancePointToPlane(const TPlane& _krPlane, const TVector3& _krPoint); //done
 
