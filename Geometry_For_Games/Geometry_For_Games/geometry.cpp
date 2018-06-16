@@ -881,7 +881,7 @@ bool IsLinePlaneIntersection(const T3DLine& _krLine, const TPlane& _krPlane, TVe
 /*
 name of function : IsIntersection
 @author: Henry Oliver
-@parameter: Find if there is a Point of Intersection Between a Line and a another Line
+@parameter: Find if there is a Point of Intersection Between a Line and another Line
 @return: bool
 */
 bool IsIntersection(const T3DLine& _krLine1, const T3DLine& _krLine2) {
@@ -956,6 +956,12 @@ bool IsIntersection(const T3DLine& _krLine1, const T3DLine& _krLine2) {
 	return true; //COLL
 }
 
+/*
+name of function : ComputeIntersectionBetweenLines
+@author: Henry Oliver
+@parameter: Find if the Point of Intersection Between a Line and another Line
+@return: TVector3
+*/
 TVector3& ComputeIntersectionBetweenLines(const T3DLine& _krLine1, const T3DLine& _krLine2, TVector3& _rIntersectionPoint) {
 
 	system("cls");
@@ -1045,3 +1051,4 @@ TVector3& ComputeIntersectionBetweenLines(const T3DLine& _krLine1, const T3DLine
 
 	return IG;
 }
+
