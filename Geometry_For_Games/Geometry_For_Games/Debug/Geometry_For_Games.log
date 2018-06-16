@@ -1,13 +1,7 @@
 ﻿  geometry.cpp
 o:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(474): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 o:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(538): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-o:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(564): warning C4101: 'linez': unreferenced local variable
-o:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(562): warning C4101: 'linex': unreferenced local variable
-o:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(563): warning C4101: 'liney': unreferenced local variable
-o:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(891): warning C4101: 'ndm': unreferenced local variable
-o:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(891): warning C4101: 'mub': unreferenced local variable
-o:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(891): warning C4101: 'n': unreferenced local variable
-o:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(1038): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-o:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(1039): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-o:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(1040): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+o:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(1044): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+o:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(1045): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+o:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(1046): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   Geometry_For_Games.vcxproj -> O:\Geometry for games\Geometry_For_Games\Debug\Geometry_For_Games.exe

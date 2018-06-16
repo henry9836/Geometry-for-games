@@ -559,9 +559,9 @@ float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoin
 	float lineendy;
 	float lineendz;
 
-	float linex;
+	/*float linex;
 	float liney;
-	float linez;
+	float linez;*/
 
 	float distance;
 
@@ -888,7 +888,7 @@ bool IsIntersection(const T3DLine& _krLine1, const T3DLine& _krLine2) {
 
 	system("cls");
 
-	double d1,d2,d3,d4,d5, n, m , ndm, mub;
+	double d1, d2, d3, d4, d5, m;
 
 	cout << "Line 1 first point X:";
 	cin >> AG.m_fX;
