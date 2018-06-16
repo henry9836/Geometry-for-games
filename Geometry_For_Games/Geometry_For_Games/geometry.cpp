@@ -5,10 +5,11 @@
 #include "test.h"
 
 
+#define PI 3.14159265f
+#define EPS 1e-9
+
 using namespace std;
 
-#define PI 3.14159265
-#define EPS 1e-9
 
 TVector3 AG;
 TVector3 BG;
@@ -966,7 +967,7 @@ TVector3& ComputeIntersectionBetweenLines(const T3DLine& _krLine1, const T3DLine
 
 	system("cls");
 
-	double d1, d2, d3, d4, d5, n, m, ndm, mub;
+	float d1, d2, d3, d4, d5, mub, ndm, n, m;
 
 	cout << "Line 1 first point X:";
 	cin >> AG.m_fX;
