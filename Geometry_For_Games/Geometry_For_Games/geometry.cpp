@@ -886,6 +886,8 @@ name of function : IsIntersection
 */
 bool IsIntersection(const T3DLine& _krLine1, const T3DLine& _krLine2) {
 
+	system("cls");
+
 	double d1,d2,d3,d4,d5, n, m , ndm, mub;
 
 	cout << "Line 1 first point X:";
@@ -951,18 +953,95 @@ bool IsIntersection(const T3DLine& _krLine1, const T3DLine& _krLine2) {
 		return false; //NO COLL
 	}
 
+	return true; //COLL
+}
+
+TVector3& ComputeIntersectionBetweenLines(const T3DLine& _krLine1, const T3DLine& _krLine2, TVector3& _rIntersectionPoint) {
+
+	system("cls");
+
+	double d1, d2, d3, d4, d5, n, m, ndm, mub;
+
+	cout << "Line 1 first point X:";
+	cin >> AG.m_fX;
+	cout << "Line 1 first point Y:";
+	cin >> AG.m_fY;
+	cout << "Line 1 first point Z:";
+	cin >> AG.m_fZ;
+
+	cout << "Line 1 second point X:";
+	cin >> BG.m_fX;
+	cout << "Line 1 second point Y:";
+	cin >> BG.m_fY;
+	cout << "Line 1 second point Z:";
+	cin >> BG.m_fZ;
+
+	cout << endl << endl;
+
+	cout << "Line 2 first point X:";
+	cin >> CG.m_fX;
+	cout << "Line 2 first point Y:";
+	cin >> CG.m_fY;
+	cout << "Line 2 first point Z:";
+	cin >> CG.m_fZ;
+
+	cout << "Line 2 second point X:";
+	cin >> DG.m_fX;
+	cout << "Line 2 second point Y:";
+	cin >> DG.m_fY;
+	cout << "Line 2 second point Z:";
+	cin >> DG.m_fZ;
+
+	cout << endl << endl;
+
+	EG.m_fX = (AG.m_fX - CG.m_fX);
+	EG.m_fY = (AG.m_fY - CG.m_fY);
+	EG.m_fZ = (AG.m_fZ - CG.m_fZ);
+
+	FG.m_fX = (DG.m_fX - CG.m_fX);
+	FG.m_fY = (DG.m_fY - CG.m_fY);
+	FG.m_fZ = (DG.m_fZ - CG.m_fZ);
+
+	if (abs(FG.m_fX) < EPS && abs(FG.m_fY) < EPS && abs(FG.m_fZ) < EPS) {
+		system("pause");
+		return IG; //NO COLL
+	}
+
+	GG.m_fX = (BG.m_fX - AG.m_fX);
+	GG.m_fY = (BG.m_fY - AG.m_fY);
+	GG.m_fZ = (BG.m_fZ - AG.m_fZ);
+
+	if (abs(GG.m_fX) < EPS && abs(GG.m_fY) < EPS && abs(GG.m_fZ) < EPS) {
+		system("pause");
+		return IG; //NO COLL
+	}
+
+	d1 = EG.m_fX * FG.m_fX + EG.m_fY * FG.m_fY + EG.m_fZ * FG.m_fZ;
+	d2 = FG.m_fX * GG.m_fX + FG.m_fY * GG.m_fY + FG.m_fZ * GG.m_fZ;
+	d3 = EG.m_fX * GG.m_fX + EG.m_fY * GG.m_fY + EG.m_fZ * GG.m_fZ;
+	d4 = FG.m_fX * EG.m_fX + FG.m_fY * EG.m_fY + FG.m_fZ * EG.m_fZ;
+	d5 = GG.m_fX * GG.m_fX + GG.m_fY * GG.m_fY + GG.m_fZ * GG.m_fZ;
+
+	m = d5 * d4 - d2 * d2;
+	if (abs(m) < EPS) {
+		system("pause");
+		return IG; //NO COLL
+	}
+
+	/* COLLISION CONFIRMED FROM HERE ON */
+
 	n = d1 * d2 - d3 * d4;
 
 	ndm = n / m;
 	mub = (d1 + d2 * (ndm)) / d4;
 
-	HG.m_fX = AG.m_fX + ndm * GG.m_fX;
-	HG.m_fY = AG.m_fY + ndm * GG.m_fY;
-	HG.m_fZ = AG.m_fZ + ndm * GG.m_fZ;
-
 	IG.m_fX = CG.m_fX + mub * FG.m_fX;
 	IG.m_fY = CG.m_fY + mub * FG.m_fY;
 	IG.m_fZ = CG.m_fZ + mub * FG.m_fZ;
 
-	return true; //COLL
+	cout << "Point of intersection: (" << IG.m_fX << ", " << IG.m_fY << ", " << IG.m_fZ << ")" << endl;
+
+	system("pause");
+
+	return IG;
 }

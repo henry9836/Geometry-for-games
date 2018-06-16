@@ -96,8 +96,7 @@ int main() {
 	MoveWindow(console, w.left, w.top, 800, 400, TRUE); //Resize console window
 
 	int amountoftests = 0;
-
-	int iT;
+	int iT = -1;
 
 	int choice = -1;
 	while (choice != 99) {
@@ -120,6 +119,7 @@ int main() {
 		cout << "15. Compute Distance Circle To Circle" << endl;
 		cout << "18. Line Plane Intersection" << endl;
 		cout << "19. Are Two Lines Intersecting" << endl;
+		cout << "20. Compute Intersection Between Two Lines" << endl;
 		cout << endl;
 		cout << "Tested: " << amountoftests << " times" << endl;
 		cout << "99. Exit" << endl;
@@ -242,6 +242,11 @@ int main() {
 			}
 			amountoftests += 1;
 			system("pause");
+		}
+
+		else if (choice == 20) { //ComputeIntersectionBetweenLines
+			ComputeIntersectionBetweenLines(AL, BL, A);
+			amountoftests += 1;
 		}
 
 		else if (choice == 99) {

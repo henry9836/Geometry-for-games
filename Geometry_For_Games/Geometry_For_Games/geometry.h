@@ -92,9 +92,9 @@ EIntersections ComputeLineSphereIntersection(const T3DLine& _krLine, const TSphe
 
 bool IsLinePlaneIntersection(const T3DLine& _krLine, const TPlane& _krPlane, TVector3& _rv3IntersectionPoint); //done
 
-bool IsIntersection(const T3DLine& _krLine1, const T3DLine& _krLine2);
+bool IsIntersection(const T3DLine& _krLine1, const T3DLine& _krLine2); //done
 
-TVector3& ComputeIntersectionBetweenLines(const T3DLine& _krLine1, const T3DLine& _krLine2, TVector3& _rIntersectionPoint);
+TVector3& ComputeIntersectionBetweenLines(const T3DLine& _krLine1, const T3DLine& _krLine2, TVector3& _rIntersectionPoint); //done
 
 bool IsInFieldOfView(const TVector2& _krCameraPosition, const TVector2& _krCameraDirection, const float _kfFieldOfViewInRadians, const TVector2& _krObjectPosition);
 
