@@ -1,11 +1,14 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 #include "geometry.h"
 #include "test.h"
+
 
 using namespace std;
 
 #define PI 3.14159265
+#define EPS 1e-9
 
 TVector3 AG;
 TVector3 BG;
@@ -15,6 +18,7 @@ TVector3 EG;
 TVector3 FG;
 TVector3 GG;
 TVector3 HG;
+TVector3 IG;
 
 TVector2 TwoAG;
 TVector2 TwoBG;
@@ -78,7 +82,6 @@ name of function: Add
 @parameter: adds two vectors
 @return: _rResultant vector (struct)
 */
-
 TVector3& Add(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
 
 	system("cls");
@@ -118,6 +121,7 @@ TVector3& Add(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant)
 
 	return _rResultant;
 }
+
 /*
 name of function : Subtract
 @author: Henry Oliver
@@ -322,6 +326,7 @@ TVector3& CrossProduct(const TVector3& _krA, const TVector3& _krB, TVector3& _rR
 
 	return _rResultant;
 }
+
 /*
 name of function : Normalise
 @author: Henry Oliver
@@ -537,6 +542,7 @@ float ComputeAngleBetween(const TVector3& _krA, const TVector3& _krB) {
 
 	return ans;
 }
+
 /*
 name of function : ComputeDistancePointToLine
 @author: Henry Oliver
@@ -643,6 +649,7 @@ float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoin
 
 	return 0.0f;
 }
+
 /*
 name of function : ComputeDistancePointToPlane
 @author: Andres Villacreces
@@ -869,4 +876,93 @@ bool IsLinePlaneIntersection(const T3DLine& _krLine, const TPlane& _krPlane, TVe
 	std::cout << "    P: " << "(" << X << " , " << Y << " , " << Z << ")" << endl;
 
 	return true;
+}
+
+/*
+name of function : IsIntersection
+@author: Henry Oliver
+@parameter: Find if there is a Point of Intersection Between a Line and a another Line
+@return: bool
+*/
+bool IsIntersection(const T3DLine& _krLine1, const T3DLine& _krLine2) {
+
+	double d1,d2,d3,d4,d5, n, m , ndm, mub;
+
+	cout << "Line 1 first point X:";
+	cin >> AG.m_fX;
+	cout << "Line 1 first point Y:";
+	cin >> AG.m_fY;
+	cout << "Line 1 first point Z:";
+	cin >> AG.m_fZ;
+
+	cout << "Line 1 second point X:";
+	cin >> BG.m_fX;
+	cout << "Line 1 second point Y:";
+	cin >> BG.m_fY;
+	cout << "Line 1 second point Z:";
+	cin >> BG.m_fZ;
+	
+	cout << endl << endl;
+
+	cout << "Line 2 first point X:";
+	cin >> CG.m_fX;
+	cout << "Line 2 first point Y:";
+	cin >> CG.m_fY;
+	cout << "Line 2 first point Z:";
+	cin >> CG.m_fZ;
+
+	cout << "Line 2 first point X:";
+	cin >> DG.m_fX;
+	cout << "Line 2 first point Y:";
+	cin >> DG.m_fY;
+	cout << "Line 2 first point Z:";
+	cin >> DG.m_fZ;
+
+	cout << endl << endl;
+
+	EG.m_fX = (AG.m_fX - CG.m_fX);
+	EG.m_fY = (AG.m_fY - CG.m_fY);
+	EG.m_fZ = (AG.m_fZ - CG.m_fZ);
+
+	FG.m_fX = (DG.m_fX - CG.m_fX);
+	FG.m_fY = (DG.m_fY - CG.m_fY);
+	FG.m_fZ = (DG.m_fZ - CG.m_fZ);
+
+	if (abs(FG.m_fX) < EPS && abs(FG.m_fY) < EPS && abs(FG.m_fZ) < EPS) {
+		return false; //NO COLL
+	}
+
+	GG.m_fX = (BG.m_fX - AG.m_fX);
+	GG.m_fY = (BG.m_fY - AG.m_fY);
+	GG.m_fZ = (BG.m_fZ - AG.m_fZ);
+
+	if (abs(GG.m_fX) < EPS && abs(GG.m_fY) < EPS && abs(GG.m_fZ) < EPS) {
+		return false; //NO COLL
+	}
+
+	d1 = EG.m_fX * FG.m_fX + EG.m_fY * FG.m_fY + EG.m_fZ * FG.m_fZ;
+	d2 = FG.m_fX * GG.m_fX + FG.m_fY * GG.m_fY + FG.m_fZ * GG.m_fZ;
+	d3 = EG.m_fX * GG.m_fX + EG.m_fY * GG.m_fY + EG.m_fZ * GG.m_fZ;
+	d4 = FG.m_fX * EG.m_fX + FG.m_fY * EG.m_fY + FG.m_fZ * EG.m_fZ;
+	d5 = GG.m_fX * GG.m_fX + GG.m_fY * GG.m_fY + GG.m_fZ * GG.m_fZ;
+
+	m = d5 * d4 - d2 * d2;
+	if (abs(m) < EPS) {
+		return false; //NO COLL
+	}
+
+	n = d1 * d2 - d3 * d4;
+
+	ndm = n / m;
+	mub = (d1 + d2 * (ndm)) / d4;
+
+	HG.m_fX = AG.m_fX + ndm * GG.m_fX;
+	HG.m_fY = AG.m_fY + ndm * GG.m_fY;
+	HG.m_fZ = AG.m_fZ + ndm * GG.m_fZ;
+
+	IG.m_fX = CG.m_fX + mub * FG.m_fX;
+	IG.m_fY = CG.m_fY + mub * FG.m_fY;
+	IG.m_fZ = CG.m_fZ + mub * FG.m_fZ;
+
+	return true; //COLL
 }

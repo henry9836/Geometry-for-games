@@ -119,6 +119,7 @@ int main() {
 		cout << "14. Compute Distance Point To Sphere" << endl;
 		cout << "15. Compute Distance Circle To Circle" << endl;
 		cout << "18. Line Plane Intersection" << endl;
+		cout << "19. Are Two Lines Intersecting" << endl;
 		cout << endl;
 		cout << "Tested: " << amountoftests << " times" << endl;
 		cout << "99. Exit" << endl;
@@ -226,6 +227,19 @@ int main() {
 
 		else if (choice == 18) { //LinePlaneIntersection
 			IsLinePlaneIntersection( AL , AP , A);
+			amountoftests += 1;
+			system("pause");
+		}
+
+		else if (choice == 19) { //Line and Line Intersection
+			bool result = false;
+			result = IsIntersection( AL, BL);
+			if (result == true) {
+				cout << "Lines Intersect" << endl;
+			}
+			else {
+				cout << "Lines Do Not Intersect" << endl;
+			}
 			amountoftests += 1;
 			system("pause");
 		}
