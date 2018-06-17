@@ -1,2 +1,12 @@
+<<<<<<< HEAD
+﻿  main.cpp
+d:\users\andres.vil7740\documents\github\geometry-for-games\geometry_for_games\geometry_for_games\main.cpp(106): warning C4101: 'iT': unreferenced local variable
+  Geometry_For_Games.vcxproj -> D:\Users\Andres.Vil7740\Documents\GitHub\Geometry-for-games\Geometry_For_Games\Debug\Geometry_For_Games.exe
+=======
 ﻿  geometry.cpp
+<<<<<<< HEAD
   Geometry_For_Games.vcxproj -> E:\Geometry for games\Geometry_For_Games\Debug\Geometry_For_Games.exe
+=======
+  Geometry_For_Games.vcxproj -> O:\Geometry for games\Geometry_For_Games\Debug\Geometry_For_Games.exe
+>>>>>>> 4522c833d6d9a72a23d0646866cd752459c19013
+>>>>>>> c3667775e925ea84514615b19b83ef243353ad2b
