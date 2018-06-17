@@ -12,40 +12,39 @@ name of function: main
 #include "geometry.h"
 #include "test.h"
 
-TVector3 A;
-TVector3 B;
-TVector3 C;
-TVector3 D;
+TVector3 VectorA;
+TVector3 VectorB;
+TVector3 VectorC;
+TVector3 VectorD;
 
-TVector2 TwoA;
-TVector2 TwoB;
-TVector2 TwoC;
-TVector2 TwoD;
+TVector2 VectorA2D;
+TVector2 VectorB2D;
+TVector2 VectorC2D;
+TVector2 VectorD2D;
 
-TPlane AP;
-TPlane BP;
-TPlane CP;
-TPlane DP;
+TPlane PlaneA;
+TPlane PlaneB;
+TPlane PlaneC;
+TPlane PlaneD;
 
-T3DLine AL;
-T3DLine BL;
-T3DLine CL;
-T3DLine DL;
+T3DLine LineA;
+T3DLine LineB;
+T3DLine LineC;
+T3DLine LineD;
 
-TCircle AC;
-TCircle BC;
-TCircle CC;
-TCircle DC;
 
-TSphere AS;
-TSphere BS;
-TSphere CS;
-TSphere DS;
+TCircle CircleA;
+TCircle CircleB;
+TCircle CircleC;
+TCircle CircleD;
 
-TTriangle2 A2T;
-TTriangle2 B2T;
-TTriangle2 C2T;
-TTriangle2 D2T;
+TSphere SphereA;
+TSphere SphereB;
+TSphere SphereC;
+TSphere SphereD;
+
+TTriangle2 LineA2D;
+TTriangle2 LineB2D;
 
 
 float af;
@@ -99,7 +98,7 @@ int main() {
 	HWND console = GetConsoleWindow();
 	RECT w;
 	GetWindowRect(console, &w);
-	MoveWindow(console, w.left, w.top, 800, 400, TRUE); //Resize console window
+	MoveWindow(console, w.left, w.top, 800, 500, TRUE); //Resize console window
 
 	int amountoftests = 0;
 	int iT = -1;
@@ -135,7 +134,7 @@ int main() {
 		cin >> choice;
 
 		if (choice == 1) { //Equals
-			bool result = Equals(A, B);
+			bool result = Equals(VectorA, VectorB);
 			if (result == true) {
 				cout << "The Two Vectors Are Equal!" << endl;
 			}
@@ -147,113 +146,125 @@ int main() {
 		}
 
 		else if (choice == 2) { //Add
-			Add(A, B, C);
+			VectorA = Add(VectorA, VectorB, VectorC);
+			cout << "Result: (" << VectorA.m_fX << ", " << VectorA.m_fY << ", " << VectorA.m_fZ << ")" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 3) { //Subtract
-			Subtract(A, B, C);
+			VectorA = Subtract(VectorA, VectorB, VectorC);
+			cout << "Result: (" << VectorA.m_fX << ", " << VectorA.m_fY << ", " << VectorA.m_fZ << ")" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
-		else if (choice == 4) { //Subtract
-			ScaleVector(A, af, B);
+		else if (choice == 4) { //Scale
+			VectorA = ScaleVector(VectorA, af, VectorB);
+			cout << "Result: (" << VectorA.m_fX << ", " << VectorA.m_fY << ", " << VectorA.m_fZ << ")" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 
 		else if (choice == 5) { //Magnitude
-			af = Magnitude(A);
+			af = Magnitude(VectorA);
 			cout << "Magnitude of Vector: " << af << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 6) { //Dot Product
-			af = DotProduct(A,B);
+			af = DotProduct(VectorA, VectorB);
 			cout << "Dot Product of Vectors: " << af << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 7) { //CrossProduct
-			CrossProduct(A, B, C);
+			VectorA = CrossProduct(VectorA, VectorB, VectorC);
+			cout << "Result: (" << VectorA.m_fX << ", " << VectorA.m_fY << ", " << VectorA.m_fZ << ")" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 8) { //Normalise
-			Normalise(A, B);
+			VectorA = Normalise(VectorA, VectorB);
+			cout << "Normalised Vector Result: (" << VectorA.m_fX << ", " << VectorA.m_fY << ", " << VectorA.m_fZ << ")" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 9) { //Projection
-			Projection(A, B, C);
+			Projection(VectorA, VectorB, VectorC);
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 10) { //ComputeAngleBetween
-			ComputeAngleBetween(TwoA,TwoB);
+			af = ComputeAngleBetween(VectorA2D,VectorB2D);
+			cout << "The Angle Between The Two Vectors is: " << af << " Degrees" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 11) { //ComputeAngleBetween3v
-			ComputeAngleBetween(A, B);
+			af = ComputeAngleBetween(VectorA, VectorB);
+			cout << "The Angle Between The Two Vectors is: " << af << " Degrees" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 12) { //ComputeDistancePointToLine
-			ComputeDistancePointToLine(AL, A);
+			af = ComputeDistancePointToLine(LineA, VectorA);
+			cout << "Distance of Point from line is: " << af;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 13) { //ComputeDistancePointToPlane
-			ComputeDistancePointToPlane(AP, A);
+			af = ComputeDistancePointToPlane(PlaneA , VectorA);
+			cout << "    The Distance From a POINT to a PLANE is:  " << endl << "     * " << "[" << af << "]" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 14) { //ComputeDistancePointToSphere
-			ComputeDistancePointToSphere(AS, A);
+			af = ComputeDistancePointToSphere(SphereA, VectorA);
+			cout << "    The Distance Between POINT and Center of the SPHERE is:  " << endl << "     * " << "[" << af << "]" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 15) { //ComputeDistanceCircleToCircle
-			ComputeDistanceCircleToCircle(AC, BC);
+			af = ComputeDistanceCircleToCircle(CircleA, CircleB);
+			cout << "    The Distance Between the Centers of Two Circles is:  " << endl << "     * " << "[" << af << "]" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 16) { //ComputeDistanceCircleToTriangle
-			ComputeDistanceCircleToTriangle(AC, A2T);
+			af = ComputeDistanceCircleToTriangle(CircleA, LineA2D);
+			cout << "    The Distance Between the Center of the CIRCLE and the TRIANGLE is:  " << endl << "     * " << "[" << af << "]" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
-		else if (choice == 17) { //LinePlaneIntersection
-			ComputeLineSphereIntersection(AL, AS, A, B);
+		else if (choice == 17) { //ComputeLineSphereIntersection
+			ComputeLineSphereIntersection(LineA, SphereA, VectorA, VectorB);
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 18) { //LinePlaneIntersection
-			IsLinePlaneIntersection( AL , AP , A);
+			IsLinePlaneIntersection(LineA, PlaneA , VectorA);
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 19) { //Line and Line Intersection
 			bool result = false;
-			result = IsIntersection( AL, BL);
+			result = IsIntersection(LineA, LineB);
 			if (result == true) {
 				cout << "Lines Intersect" << endl;
 			}
@@ -265,7 +276,7 @@ int main() {
 		}
 
 		else if (choice == 20) { //ComputeIntersectionBetweenLines
-			ComputeIntersectionBetweenLines(AL, BL, A);
+			ComputeIntersectionBetweenLines(LineA, LineB, VectorA);
 			amountoftests += 1;
 		}
 

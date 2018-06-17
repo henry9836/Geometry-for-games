@@ -76,7 +76,6 @@ bool Equals(TVector3& _krA, TVector3& _krB) {
 	return equals;
 }
 
-
 /*
 name of function: Add
 @author: Henry Oliver
@@ -117,8 +116,8 @@ TVector3& Add(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant)
 	_rResultant.m_fX = (AG.m_fX + BG.m_fX);
 	_rResultant.m_fY = (AG.m_fY + BG.m_fY);
 	_rResultant.m_fZ = (AG.m_fZ + BG.m_fZ);
+	
 
-	cout << "Result: (" << _rResultant.m_fX << ", " << _rResultant.m_fY << ", " << _rResultant.m_fZ << ")" << endl;
 
 	return _rResultant;
 }
@@ -163,8 +162,6 @@ TVector3& Subtract(const TVector3& _krA, const TVector3& _krB, TVector3& _rResul
 	_rResultant.m_fY = (AG.m_fY - BG.m_fY);
 	_rResultant.m_fZ = (AG.m_fZ - BG.m_fZ);
 
-	cout << "Result: (" << _rResultant.m_fX << ", " << _rResultant.m_fY << ", " << _rResultant.m_fZ << ")" << endl;
-
 	return _rResultant;
 }
 
@@ -201,7 +198,7 @@ TVector3& ScaleVector(const TVector3& _krA, const float _kfScalar, TVector3& _rR
 
 	cout << endl << endl;
 
-	cout << "Result: (" << AG.m_fX << ", " << AG.m_fY << ", " << AG.m_fZ << ")" << endl;
+	_rResultant = AG;
 
 	return  _rResultant;
 
@@ -323,7 +320,7 @@ TVector3& CrossProduct(const TVector3& _krA, const TVector3& _krB, TVector3& _rR
 	CG.m_fY = ((AG.m_fZ*BG.m_fX) - (AG.m_fX*BG.m_fZ));
 	CG.m_fZ = ((AG.m_fX*BG.m_fY) - (AG.m_fY*BG.m_fX));
 
-	cout << "Result: (" << CG.m_fX << ", " << CG.m_fY << ", " << CG.m_fZ << ")" << endl;
+	_rResultant = CG;
 
 	return _rResultant;
 }
@@ -364,9 +361,7 @@ TVector3& Normalise(const TVector3& _krA, TVector3& _rResultant) {
 	CG.m_fY = (AG.m_fY/AL);
 	CG.m_fZ = (AG.m_fZ/AL);
 
-	cout << "Normalised Vector Result: (" << CG.m_fX << ", " << CG.m_fY << ", " << CG.m_fZ << ")" << endl; 
-
-
+	_rResultant = CG;
 
 	return _rResultant;
 }
@@ -419,7 +414,7 @@ TVector3& Projection(const TVector3& _krA, const TVector3& _krB, TVector3& _rRes
 
 	ans = (dot_p / mag);
 
-	cout << "Projection: " << ans << endl;
+	cout << "Scalar Projection: " << ans << endl;
 
 	return _rResultant;
 }
@@ -473,9 +468,7 @@ float ComputeAngleBetween(const TVector2& _krA, const TVector2& _krB) {
 	iT = ans;
 
 	ans = (ans * 180 / PI);
-
-	cout << "The Angle Between The Two Vectors is: " << ans << " Degrees" << endl;
-	cout << "Or: " << iT << " Radians" << endl;
+	//cout << "Or: " << iT << " Radians" << endl;
 
 	return ans;
 }
@@ -537,9 +530,6 @@ float ComputeAngleBetween(const TVector3& _krA, const TVector3& _krB) {
 	iT = ans;
 
 	ans = (ans * 180 / PI);
-
-	cout << "The Angle Between The Two Vectors is: " << ans << " Degrees" << endl;
-	cout << "Or: " << iT << " Radians" << endl;
 
 	return ans;
 }
@@ -644,9 +634,7 @@ float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoin
 
 	distance = (x+y+z);
 
-	cout << "Distance of Point from line is: " << distance;
-
-	return 0.0f;
+	return distance;
 }
 
 /*
@@ -700,10 +688,7 @@ float ComputeDistancePointToPlane(const TPlane& _krPlane, const TVector3& _krPoi
 		d = d * -1;
 	}
 
-	std::cout << "    The Distance From a POINT to a PLANE is:  " << endl << "     * " << "[" << d << "]" << endl;
-	cout << endl;
-
-	return 0.0;
+	return d;
 }
 
 /*
@@ -752,10 +737,8 @@ system("cls");
 
 	std::cout << "3) Finding the Distance Between POINT and Center of the SPHERE:" << endl << endl;
 	d = sqrt((pow((x - h), 2)) + (pow((y - k), 2)) + (pow((z - j), 2))) - r;
-	std::cout << "    The Distance Between POINT and Center of the SPHERE is:  " << endl << "     * " << "[" << d << "]" << endl;
-	cout << endl;
-
-	return 0.0;
+	
+	return d;
 }
 
 /*
@@ -800,12 +783,16 @@ system("cls");
 
 	std::cout << "3) Finding the Distance Between the Centers of TWO CIRCLES:" << endl << endl;
 	d = sqrt((pow((h2 - h1), 2)) + (pow((k2 - k1), 2)));
-	std::cout << "    The Distance Between the Centers of Two Circles is:  " << endl << "     * " << "[" << d << "]" << endl;
-	cout << endl;
-
-	return 0.0;
+	
+	return d;
 }
 
+/*
+name of function : ComputeDistanceCircleToTriangle
+@author: Andres Villacreces
+@parameter: Find the Distance Between the Center of a Circles and Triangle
+@return: float
+*/
 float ComputeDistanceCircleToTriangle(const TCircle& _krCircle, const TTriangle2& _krTriangle) {
 
 	system("cls");
@@ -855,12 +842,9 @@ cout << endl << endl;
 
 std::cout << "3) Finding the Distance Between the Center of the CIRCLE and the TRIANGLE:" << endl << endl;
 d = sqrt((pow((dx - h), 2)) + (pow((dy - k), 2)));
-std::cout << "    The Distance Betwe en the Center of the CIRCLE and the TRIANGLE is:  " << endl << "     * " << "[" << d << "]" << endl;
-cout << endl;
 
-return 0;
+return d;
 }
-
 
 /*
 name of function : ComputeLineSphereIntersection
@@ -868,7 +852,6 @@ name of function : ComputeLineSphereIntersection
 @parameter: Find the Points of Intersection Between a Line and a Sphere
 @return: EIntersections
 */
-
 EIntersections ComputeLineSphereIntersection(const T3DLine& _krLine, const TSphere& _krSphere, TVector3& _rv3IntersectionPoint1, TVector3& _rv3IntersectionPoint2) {
 
 	float dx, dy, dz;
@@ -1001,7 +984,6 @@ EIntersections ComputeLineSphereIntersection(const T3DLine& _krLine, const TSphe
 	}
 }
 
-
 /*
 name of function : IsLinePlaneIntersection
 @author: Andres Villacreces
@@ -1048,7 +1030,7 @@ bool IsLinePlaneIntersection(const T3DLine& _krLine, const TPlane& _krPlane, TVe
 	std::cout << "2) Finding the EQUATION for the PLANE" << endl << endl;
 	std::cout << "  * Enter the Slope of the Line on the y-z Plane: ";
 	std::cin >> m;
-	std::cout << "  * Enter the Slope of the Line on the y-z Plane: ";
+	std::cout << "  * Enter the Slope of the Line on the x-y Plane: ";
 	std::cin >> n;
 	std::cout << "  * Enter the 'y' Value of the Plane at the Point (0,0,0): ";
 	std::cin >> c;
@@ -1066,6 +1048,8 @@ bool IsLinePlaneIntersection(const T3DLine& _krLine, const TPlane& _krPlane, TVe
 	X = Value_t * (x1 - x0) + x0;
 	Y = Value_t * (y1 - y0) + y0;
 	Z = Value_t * (z1 - z0) + z0;
+
+
 
 	std::cout << "  The Point of Intersection Between a LINE AND a PLANE" << endl;
 	std::cout << "    P: " << "(" << X << " , " << Y << " , " << Z << ")" << endl;
