@@ -591,8 +591,6 @@ float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoin
 
 	cout << "Line End Z: ";
 	cin >> lineendz;
-	
-	/* http://mathworld.wolfram.com/Point-LineDistance3-Dimensional.html */
 
 	/* First part of equation */
 
@@ -799,6 +797,202 @@ system("cls");
 
 	return 0.0;
 }
+
+float ComputeDistanceCircleToTriangle(const TCircle& _krCircle, const TTriangle2& _krTriangle) {
+
+	system("cls");
+
+float h, k, r, x1, y1, x2, y2, x3, y3, d, dx, dy;
+
+std::cout << "COMPUTING DISTANCE BETWEEN THE CENTER OF A CIRCLE AND A TRIANGLE:" << endl << endl;
+
+std::cout << "1) Defining the EQUATION for the CIRCLE:" << endl << endl;
+
+std::cout << "      * Center of the Circle: Coordinate 'h'-- ";
+std::cin >> h;
+std::cout << "      * Center of the Circle: Coordinate 'k'-- ";
+std::cin >> k;
+std::cout << "      * Enter the Radius-- ";
+std::cin >> r;
+cout << endl;
+std::cout << "  The EQUATION for the Circle is:" << endl;
+std::cout << "    * " << "(" << "x" << " - " << h << ")" << "^" << 2 << " + " << "(" << "y" << " - " << k << ")" << "^" << 2 << " = " << r << "^" << 2 << "\n";
+cout << endl << endl;
+
+std::cout << "2) Defining the CENTROID of the TRIANGLE:" << endl << endl;
+
+std::cout << "      * First Point X-Coordinate-- ";
+std::cin >> x1;
+std::cout << "      * First Point Y-Coordinate-- ";
+std::cin >> y1;
+std::cout << "      * Second Point X-Coordinate-- ";
+std::cin >> x2;
+std::cout << "      * Second Point Y-Coordinate-- ";
+std::cin >> y2;
+std::cout << "      * Third Point X-Coordinate-- ";
+std::cin >> x3;
+std::cout << "      * Third Point Y-Coordinate-- ";
+std::cin >> y3;
+cout << endl;
+std::cout << "  The CENTROID of the TRIANGLE is Defined by:" << endl;
+std::cout << "    * " << "M" << " = " << "[" << "(" << x1 << " + " << x2 << " + " << x3 << ")" << "/" << 2 << " , " 
+<< "(" << y1 << " + " << y2 << " + " << y3 << ")" << "/" << 2 << "]" << "\n";
+
+dx = ((x1 + x2 + x3) / 2);
+dy = ((y1 + y2 + y3) / 2);
+
+
+std::cout << "    * " << "M" << " = " << "[" << "(" << dx << " , " << dy << "]" << "\n";
+cout << endl << endl;
+
+std::cout << "3) Finding the Distance Between the Center of the CIRCLE and the TRIANGLE:" << endl << endl;
+d = sqrt((pow((dx - h), 2)) + (pow((dy - k), 2)));
+std::cout << "    The Distance Betwe en the Center of the CIRCLE and the TRIANGLE is:  " << endl << "     * " << "[" << d << "]" << endl;
+cout << endl;
+
+return 0;
+}
+
+
+/*
+name of function : ComputeLineSphereIntersection
+@author: Andres Villacreces
+@parameter: Find the Points of Intersection Between a Line and a Sphere
+@return: EIntersections
+*/
+
+EIntersections ComputeLineSphereIntersection(const T3DLine& _krLine, const TSphere& _krSphere, TVector3& _rv3IntersectionPoint1, TVector3& _rv3IntersectionPoint2) {
+
+	float dx, dy, dz;
+	float Imagi_t, RealP_t;
+	float X1, X2, Y1, Y2, Z1, Z2, t, x1, x0, y1, y0, z1, z0, h, k, j, r;
+	float a_coftt, b_coftt, c_coftt, Dscrt, Value_t_1, Value_t_2;
+
+
+	std::cout << "COMPUTING LINE AND SPHERE INTERSECTION:" << endl << endl;
+
+	std::cout << "1) Defining the 3D LINE:" << endl << endl;
+
+	std::cout << "     Enter the Values for the X-Point" << endl;
+	std::cout << "      * x1-- ";
+	std::cin >> x1;
+	std::cout << "      * x0-- ";
+	std::cin >> x0;
+	std::cout << "     Enter the Values for the Y-Point" << endl;
+	std::cout << "      * y1-- ";
+	std::cin >> y1;
+	std::cout << "      * y0-- ";
+	std::cin >> y0;
+	std::cout << "     Enter the Values for the Z-Point" << endl;
+	std::cout << "      * z1-- ";
+	std::cin >> z1;
+	std::cout << "      * z0-- ";
+	std::cin >> z0;
+
+	dx = x1 - x0;
+	dy = y1 - y0;
+	dz = z1 - z0;
+
+	cout << endl;
+	std::cout << "    The 3D LINE is Defined by:" << endl;
+	std::cout << "     * " << "x" << " = " << dx << "t" << ((x0 < 0) ? ' ' : '+') << x0 << "\n";
+	std::cout << "     * " << "y" << " = " << dy << "t" << ((y0 < 0) ? ' ' : '+') << y0 << "\n";
+	std::cout << "     * " << "z" << " = " << dz << "t" << ((z0 < 0) ? ' ' : '+') << z0 << "\n";
+	cout << endl << endl;
+
+	std::cout << "2) Finding the EQUATION for the SPHERE" << endl << endl;
+	std::cout << "     * Enter the Value 'h'-- ";
+	std::cin >> h;
+	std::cout << "     * Enter the Value 'k'-- ";
+	std::cin >> k;
+	std::cout << "     * Enter the Value 'j'-- ";
+	std::cin >> j;
+	std::cout << "     * Enter the value 'Radius'-- ";
+	std::cin >> r;
+	cout << endl;
+
+	std::cout << "  The Equation for the ELLIPSE is: " << endl;
+	std::cout << "   * " << "[" << "(" << "xs" << " - " << h << ")" << "^" << 2 << "]" << " + " << "[" << "(" << "ys" << " - " << k << ")" << "^" << 2 << "]"
+		<< " + " << "[" << "(" << "zs" << " - " << j << ")" << "^" << 2 << "]" << " = " << "(" << r << ")" << "^" << 2 << "\n";
+	cout << endl << endl;
+
+	std::cout << "3) Finding Points of Intersection of SPHERE and LINE" << endl << endl;
+
+	std::cout << "    Using Quadratic Equation to Find the Points" << endl;
+
+	a_coftt = (pow((x1 - x0), 2)) + (pow((y1 - y0), 2)) + (pow((z1 - z0), 2));
+	b_coftt = 2 * (((x1 - x0) * (x0 - h) + (y1 - y0) * (y0 - k) + (z1 - z0) * (z0 - j)));
+	c_coftt = (pow((h), 2)) + (pow((k), 2)) + (pow((j), 2)) + (pow((x0), 2)) + (pow((y0), 2)) + (pow((z0), 2)) - 2 * (h * x0 + k * y0 + j * z0) - (pow((r), 2));
+
+	std::cout << "     Coefficients: " << endl;
+	std::cout << "       * a_coefficient = " << a_coftt << endl;
+	std::cout << "       * b_coefficient = " << b_coftt << endl;
+	std::cout << "       * c_coefficient = " << c_coftt << endl;
+	Dscrt = b_coftt * b_coftt - 4 * a_coftt * c_coftt;
+	std::cout << "         Discriminant  = " << Dscrt << endl;
+	cout << endl;
+
+	if (Dscrt > 0)
+	{
+		Value_t_1 = (-b_coftt + sqrt(Dscrt)) / (2 * a_coftt);
+		std::cout << "      * Value_t_1 = " << Value_t_1 << endl;
+
+		X1 = Value_t_1 * (x1 - x0) + x0;
+		Y1 = Value_t_1 * (y1 - y0) + y0;
+		Z1 = Value_t_1 * (z1 - z0) + z0;
+
+		Value_t_2 = (-b_coftt - sqrt(Dscrt)) / (2 * a_coftt);
+		std::cout << "      * Value_t_2 = " << Value_t_2 << endl;
+
+		X2 = Value_t_2 * (x1 - x0) + x0;
+		Y2 = Value_t_2 * (y1 - y0) + y0;
+		Z2 = Value_t_2 * (z1 - z0) + z0;
+
+		cout << endl;
+		std::cout << "  First Point of Intersection" << endl;
+		std::cout << "    P1: " << "(" << X1 << " , " << Y1 << " , " << Z1 << ")" << endl;
+		cout << endl;
+		std::cout << "  Second Point of Intersection" << endl;
+		std::cout << "    P2: " << "(" << X2 << " , " << Y2 << " , " << Z2 << ")" << endl;
+		cout << endl;
+		return  INTERSECTION_TWO;
+	}
+
+	else if (Dscrt == 0)
+	{
+		Value_t_1 = (-b_coftt + sqrt(Dscrt)) / (2 * a_coftt);
+		std::cout << "      * Value_t_1 = " << Value_t_1 << endl;
+
+		X1 = Value_t_1 * (x1 - x0) + x0;
+		Y1 = Value_t_1 * (y1 - y0) + y0;
+		Z1 = Value_t_1 * (z1 - z0) + z0;
+
+		Value_t_2 = (-b_coftt - sqrt(Dscrt)) / (2 * a_coftt);
+		std::cout << "      * Value_t_2 = " << Value_t_1 << endl;
+
+		X2 = Value_t_2 * (x1 - x0) + x0;
+		Y2 = Value_t_2 * (y1 - y0) + y0;
+		Z2 = Value_t_2 * (z1 - z0) + z0;
+
+		std::cout << " The Point of Intersection" << endl;
+		std::cout << "  P1: " << "(" << X1 << " , " << Y1 << " , " << Z1 << ")" << endl;
+		std::cout << " Second Point of Intersection" << endl;
+		std::cout << "  P2: " << "(" << X2 << " , " << Y2 << " , " << Z2 << ")" << endl;
+		return  INTERSECTION_ONE;
+	}
+
+	else
+	{
+		std::cout << " There are no Intersection Points" << endl;
+		RealP_t = -b_coftt / (2 * a_coftt);
+		Imagi_t = sqrt(-Dscrt) / (2 * a_coftt);
+
+		std::cout << "      * Value_t_1 = " << RealP_t << " + " << Imagi_t << " i" << endl;
+		std::cout << "      * Value_t_2 = " << RealP_t << " - " << Imagi_t << " i" << endl;
+		return  INTERSECTION_NONE;
+	}
+}
+
 
 /*
 name of function : IsLinePlaneIntersection

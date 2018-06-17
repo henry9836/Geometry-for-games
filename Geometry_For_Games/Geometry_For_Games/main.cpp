@@ -42,6 +42,12 @@ TSphere BS;
 TSphere CS;
 TSphere DS;
 
+TTriangle2 A2T;
+TTriangle2 B2T;
+TTriangle2 C2T;
+TTriangle2 D2T;
+
+
 float af;
 float bf;
 float cf;
@@ -118,6 +124,8 @@ int main() {
 		cout << "13. Compute Distance Point To Plane" << endl;
 		cout << "14. Compute Distance Point To Sphere" << endl;
 		cout << "15. Compute Distance Circle To Circle" << endl;
+		cout << "16. Distance Circle To Triangle" << endl;
+		cout << "17. Line Sphere Intersection" << endl;
 		cout << "18. Line Plane Intersection" << endl;
 		cout << endl;
 		cout << "Tested: " << amountoftests << " times" << endl;
@@ -220,6 +228,18 @@ int main() {
 
 		else if (choice == 15) { //ComputeDistanceCircleToCircle
 			ComputeDistanceCircleToCircle(AC, BC);
+			amountoftests += 1;
+			system("pause");
+		}
+
+		else if (choice == 16) { //ComputeDistanceCircleToTriangle
+			ComputeDistanceCircleToTriangle(AC, A2T);
+			amountoftests += 1;
+			system("pause");
+		}
+
+		else if (choice == 17) { //LinePlaneIntersection
+			ComputeLineSphereIntersection(AL, AS, A, B);
 			amountoftests += 1;
 			system("pause");
 		}
