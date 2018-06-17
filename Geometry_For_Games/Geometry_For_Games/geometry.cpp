@@ -76,7 +76,6 @@ bool Equals(TVector3& _krA, TVector3& _krB) {
 	return equals;
 }
 
-
 /*
 name of function: Add
 @author: Henry Oliver
@@ -589,11 +588,7 @@ float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoin
 
 	cout << "Line End Z: ";
 	cin >> lineendz;
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> c3667775e925ea84514615b19b83ef243353ad2b
 	/* First part of equation */
 
 	CG.m_fX = (AG.m_fX - linebeginx);
@@ -788,12 +783,16 @@ system("cls");
 
 	std::cout << "3) Finding the Distance Between the Centers of TWO CIRCLES:" << endl << endl;
 	d = sqrt((pow((h2 - h1), 2)) + (pow((k2 - k1), 2)));
-	std::cout << "    The Distance Between the Centers of Two Circles is:  " << endl << "     * " << "[" << d << "]" << endl;
-	cout << endl;
-
-	return 0.0;
+	
+	return d;
 }
 
+/*
+name of function : ComputeDistanceCircleToTriangle
+@author: Andres Villacreces
+@parameter: Find the Distance Between the Center of a Circles and Triangle
+@return: float
+*/
 float ComputeDistanceCircleToTriangle(const TCircle& _krCircle, const TTriangle2& _krTriangle) {
 
 	system("cls");
@@ -843,12 +842,9 @@ cout << endl << endl;
 
 std::cout << "3) Finding the Distance Between the Center of the CIRCLE and the TRIANGLE:" << endl << endl;
 d = sqrt((pow((dx - h), 2)) + (pow((dy - k), 2)));
-std::cout << "    The Distance Betwe en the Center of the CIRCLE and the TRIANGLE is:  " << endl << "     * " << "[" << d << "]" << endl;
-cout << endl;
 
-return 0;
+return d;
 }
-
 
 /*
 name of function : ComputeLineSphereIntersection
@@ -856,7 +852,6 @@ name of function : ComputeLineSphereIntersection
 @parameter: Find the Points of Intersection Between a Line and a Sphere
 @return: EIntersections
 */
-
 EIntersections ComputeLineSphereIntersection(const T3DLine& _krLine, const TSphere& _krSphere, TVector3& _rv3IntersectionPoint1, TVector3& _rv3IntersectionPoint2) {
 
 	float dx, dy, dz;
@@ -989,7 +984,6 @@ EIntersections ComputeLineSphereIntersection(const T3DLine& _krLine, const TSphe
 	}
 }
 
-
 /*
 name of function : IsLinePlaneIntersection
 @author: Andres Villacreces
@@ -1036,7 +1030,7 @@ bool IsLinePlaneIntersection(const T3DLine& _krLine, const TPlane& _krPlane, TVe
 	std::cout << "2) Finding the EQUATION for the PLANE" << endl << endl;
 	std::cout << "  * Enter the Slope of the Line on the y-z Plane: ";
 	std::cin >> m;
-	std::cout << "  * Enter the Slope of the Line on the y-z Plane: ";
+	std::cout << "  * Enter the Slope of the Line on the x-y Plane: ";
 	std::cin >> n;
 	std::cout << "  * Enter the 'y' Value of the Plane at the Point (0,0,0): ";
 	std::cin >> c;
@@ -1054,6 +1048,8 @@ bool IsLinePlaneIntersection(const T3DLine& _krLine, const TPlane& _krPlane, TVe
 	X = Value_t * (x1 - x0) + x0;
 	Y = Value_t * (y1 - y0) + y0;
 	Z = Value_t * (z1 - z0) + z0;
+
+
 
 	std::cout << "  The Point of Intersection Between a LINE AND a PLANE" << endl;
 	std::cout << "    P: " << "(" << X << " , " << Y << " , " << Z << ")" << endl;
