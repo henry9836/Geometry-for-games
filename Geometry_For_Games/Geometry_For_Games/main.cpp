@@ -139,19 +139,22 @@ int main() {
 		}
 
 		else if (choice == 2) { //Add
-			Add(A, B, C);
+			A = Add(A, B, C);
+			cout << "Result: (" << A.m_fX << ", " << A.m_fY << ", " << A.m_fZ << ")" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 3) { //Subtract
-			Subtract(A, B, C);
+			A = Subtract(A, B, C);
+			cout << "Result: (" << A.m_fX << ", " << A.m_fY << ", " << A.m_fZ << ")" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
-		else if (choice == 4) { //Subtract
-			ScaleVector(A, af, B);
+		else if (choice == 4) { //Scale
+			A = ScaleVector(A, af, B);
+			cout << "Result: (" << A.m_fX << ", " << A.m_fY << ", " << A.m_fZ << ")" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
@@ -172,13 +175,15 @@ int main() {
 		}
 
 		else if (choice == 7) { //CrossProduct
-			CrossProduct(A, B, C);
+			A = CrossProduct(A, B, C);
+			cout << "Result: (" << A.m_fX << ", " << A.m_fY << ", " << A.m_fZ << ")" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 8) { //Normalise
-			Normalise(A, B);
+			A = Normalise(A, B);
+			cout << "Normalised Vector Result: (" << A.m_fX << ", " << A.m_fY << ", " << A.m_fZ << ")" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
@@ -190,31 +195,36 @@ int main() {
 		}
 
 		else if (choice == 10) { //ComputeAngleBetween
-			ComputeAngleBetween(TwoA,TwoB);
+			af = ComputeAngleBetween(TwoA,TwoB);
+			cout << "The Angle Between The Two Vectors is: " << af << " Degrees" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 11) { //ComputeAngleBetween3v
-			ComputeAngleBetween(A, B);
+			af = ComputeAngleBetween(A, B);
+			cout << "The Angle Between The Two Vectors is: " << af << " Degrees" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 12) { //ComputeDistancePointToLine
-			ComputeDistancePointToLine(AL, A);
+			af = ComputeDistancePointToLine(AL, A);
+			cout << "Distance of Point from line is: " << af;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 13) { //ComputeDistancePointToPlane
-			ComputeDistancePointToPlane(AP, A);
+			af = ComputeDistancePointToPlane(AP, A);
+			cout << "    The Distance From a POINT to a PLANE is:  " << endl << "     * " << "[" << af << "]" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 14) { //ComputeDistancePointToSphere
-			ComputeDistancePointToSphere(AS, A);
+			af = ComputeDistancePointToSphere(AS, A);
+			cout << "    The Distance Between POINT and Center of the SPHERE is:  " << endl << "     * " << "[" << af << "]" << endl;
 			amountoftests += 1;
 			system("pause");
 		}
