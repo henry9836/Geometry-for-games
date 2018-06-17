@@ -102,8 +102,7 @@ int main() {
 	MoveWindow(console, w.left, w.top, 800, 400, TRUE); //Resize console window
 
 	int amountoftests = 0;
-
-	int iT;
+	int iT = -1;
 
 	int choice = -1;
 	while (choice != 99) {
@@ -127,6 +126,8 @@ int main() {
 		cout << "16. Distance Circle To Triangle" << endl;
 		cout << "17. Line Sphere Intersection" << endl;
 		cout << "18. Line Plane Intersection" << endl;
+		cout << "19. Are Two Lines Intersecting" << endl;
+		cout << "20. Compute Intersection Between Two Lines" << endl;
 		cout << endl;
 		cout << "Tested: " << amountoftests << " times" << endl;
 		cout << "99. Exit" << endl;
@@ -248,6 +249,24 @@ int main() {
 			IsLinePlaneIntersection( AL , AP , A);
 			amountoftests += 1;
 			system("pause");
+		}
+
+		else if (choice == 19) { //Line and Line Intersection
+			bool result = false;
+			result = IsIntersection( AL, BL);
+			if (result == true) {
+				cout << "Lines Intersect" << endl;
+			}
+			else {
+				cout << "Lines Do Not Intersect" << endl;
+			}
+			amountoftests += 1;
+			system("pause");
+		}
+
+		else if (choice == 20) { //ComputeIntersectionBetweenLines
+			ComputeIntersectionBetweenLines(AL, BL, A);
+			amountoftests += 1;
 		}
 
 		else if (choice == 99) {

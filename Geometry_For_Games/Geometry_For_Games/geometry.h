@@ -86,16 +86,15 @@ float ComputeDistanceCircleToCircle(const TCircle& _krCircle1, const TCircle& _k
 
 //Distance between center of the circle and triangle 
 
-float ComputeDistanceCircleToTriangle(const TCircle& _krCircle, const TTriangle2& _krTriangle); 
-
+float ComputeDistanceCircleToTriangle(const TCircle& _krCircle, const TTriangle2& _krTriangle);
 
 EIntersections ComputeLineSphereIntersection(const T3DLine& _krLine, const TSphere& _krSphere, TVector3& _rv3IntersectionPoint1, TVector3& _rv3IntersectionPoint2); //done
 
 bool IsLinePlaneIntersection(const T3DLine& _krLine, const TPlane& _krPlane, TVector3& _rv3IntersectionPoint); //done
 
-bool IsIntersection(const T3DLine& _krLine1, const T3DLine& _krLine2);
+bool IsIntersection(const T3DLine& _krLine1, const T3DLine& _krLine2); //done
 
-TVector3& ComputeIntersectionBetweenLines(const T3DLine& _krLine1, const T3DLine& _krLine2, TVector3& _rIntersectionPoint);
+TVector3& ComputeIntersectionBetweenLines(const T3DLine& _krLine1, const T3DLine& _krLine2, TVector3& _rIntersectionPoint); //done
 
 bool IsInFieldOfView(const TVector2& _krCameraPosition, const TVector2& _krCameraDirection, const float _kfFieldOfViewInRadians, const TVector2& _krObjectPosition);
 
