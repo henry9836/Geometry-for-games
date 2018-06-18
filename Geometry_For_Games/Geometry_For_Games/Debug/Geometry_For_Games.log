@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ﻿  main.cpp
   geometry.cpp
   Generating Code...
   Geometry_For_Games.vcxproj -> E:\Geometry for games\Geometry_For_Games\Debug\Geometry_For_Games.exe
+=======
+﻿  test.cpp
+  Geometry_For_Games.vcxproj -> D:\Users\Andres.Vil7740\Documents\GitHub\Geometry-for-games\Geometry_For_Games\Debug\Geometry_For_Games.exe
+>>>>>>> 11de05cca16461314281ebe0b89145c773c4248c
