@@ -134,6 +134,32 @@ int main() {
 		cin >> choice;
 
 		if (choice == 1) { //Equals
+			system("cls");
+			cout << "-= Vector 1 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorA.m_fX = iT;
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorA.m_fY = iT;
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorA.m_fZ = iT;
+
+			cout << "-= Vector 2 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorB.m_fX = iT;
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorB.m_fY = iT;
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorB.m_fZ = iT;
 			bool result = Equals(VectorA, VectorB);
 			if (result == true) {
 				cout << "The Two Vectors Are Equal!" << endl;
@@ -146,6 +172,33 @@ int main() {
 		}
 
 		else if (choice == 2) { //Add
+			system("cls");
+			cout << "-= Vector 1 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorA.m_fX = iT;
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorA.m_fY = iT;
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorA.m_fZ = iT;
+
+			cout << "-= Vector 2 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorB.m_fX = iT;
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorB.m_fY = iT;
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorB.m_fZ = iT;
+
 			VectorA = Add(VectorA, VectorB, VectorC);
 			cout << "Result: (" << VectorA.m_fX << ", " << VectorA.m_fY << ", " << VectorA.m_fZ << ")" << endl;
 			amountoftests += 1;
@@ -153,6 +206,34 @@ int main() {
 		}
 
 		else if (choice == 3) { //Subtract
+			system("cls");
+			float iT = 0;
+
+			cout << "-= Vector 1 (Original) =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorA.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorA.m_fY = getfloat(iT);
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorA.m_fZ = getfloat(iT);
+
+			cout << "-= Vector 2 (To Subtract) =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorB.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorB.m_fY = getfloat(iT);
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorB.m_fZ = getfloat(iT);
 			VectorA = Subtract(VectorA, VectorB, VectorC);
 			cout << "Result: (" << VectorA.m_fX << ", " << VectorA.m_fY << ", " << VectorA.m_fZ << ")" << endl;
 			amountoftests += 1;
@@ -160,7 +241,26 @@ int main() {
 		}
 
 		else if (choice == 4) { //Scale
-			VectorA = ScaleVector(VectorA, af, VectorB);
+			system("cls");
+			float iT;
+			float scalar;
+
+			cout << "Scalar: ";
+			cin >> scalar;
+
+			cout << "-= Vector =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorA.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorA.m_fY = getfloat(iT);
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorA.m_fZ = getfloat(iT);
+			VectorA = ScaleVector(VectorA, scalar, VectorB);
 			cout << "Result: (" << VectorA.m_fX << ", " << VectorA.m_fY << ", " << VectorA.m_fZ << ")" << endl;
 			amountoftests += 1;
 			system("pause");
@@ -168,6 +268,22 @@ int main() {
 
 
 		else if (choice == 5) { //Magnitude
+			system("cls");
+			float iT = 0;
+
+			cout << "-= Vector =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorA.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorA.m_fY = getfloat(iT);
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorA.m_fZ = getfloat(iT);
+
 			af = Magnitude(VectorA);
 			cout << "Magnitude of Vector: " << af << endl;
 			amountoftests += 1;
@@ -175,6 +291,36 @@ int main() {
 		}
 
 		else if (choice == 6) { //Dot Product
+			system("cls");
+			float iT = 0;
+
+			cout << "-= Vector 1 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorA.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorA.m_fY = getfloat(iT);
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorA.m_fZ = getfloat(iT);
+
+			cout << endl << endl;
+
+			cout << "-= Vector 2 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorB.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorB.m_fY = getfloat(iT);
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorB.m_fZ = getfloat(iT);
 			af = DotProduct(VectorA, VectorB);
 			cout << "Dot Product of Vectors: " << af << endl;
 			amountoftests += 1;
@@ -182,6 +328,33 @@ int main() {
 		}
 
 		else if (choice == 7) { //CrossProduct
+			cout << "-= Vector 1 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorA.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorA.m_fY = getfloat(iT);
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorA.m_fZ = getfloat(iT);
+
+			cout << endl << endl;
+
+			cout << "-= Vector 2 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorB.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorB.m_fY = getfloat(iT);
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorB.m_fZ = getfloat(iT);
 			VectorA = CrossProduct(VectorA, VectorB, VectorC);
 			cout << "Result: (" << VectorA.m_fX << ", " << VectorA.m_fY << ", " << VectorA.m_fZ << ")" << endl;
 			amountoftests += 1;
@@ -189,6 +362,21 @@ int main() {
 		}
 
 		else if (choice == 8) { //Normalise
+			system("cls");
+			cout << "-= Vector 1 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorA.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorA.m_fY = getfloat(iT);
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorA.m_fZ = getfloat(iT);
+
+			cout << endl << endl;
 			VectorA = Normalise(VectorA, VectorB);
 			cout << "Normalised Vector Result: (" << VectorA.m_fX << ", " << VectorA.m_fY << ", " << VectorA.m_fZ << ")" << endl;
 			amountoftests += 1;
@@ -196,12 +384,58 @@ int main() {
 		}
 
 		else if (choice == 9) { //Projection
+			cout << "-= Vector 1 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorA.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorA.m_fY = getfloat(iT);
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorA.m_fZ = getfloat(iT);
+
+			cout << endl << endl;
+
+			cout << "-= Vector 2 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorB.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorB.m_fY = getfloat(iT);
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorB.m_fZ = getfloat(iT);
 			Projection(VectorA, VectorB, VectorC);
 			amountoftests += 1;
 			system("pause");
 		}
 
 		else if (choice == 10) { //ComputeAngleBetween
+			cout << "-= Vector 1 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorA2D.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorA2D.m_fY = getfloat(iT);
+
+			cout << endl << endl;
+
+			cout << "-= Vector 2 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorB2D.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorB2D.m_fY = getfloat(iT);
 			af = ComputeAngleBetween(VectorA2D,VectorB2D);
 			cout << "The Angle Between The Two Vectors is: " << af << " Degrees" << endl;
 			amountoftests += 1;
@@ -209,6 +443,33 @@ int main() {
 		}
 
 		else if (choice == 11) { //ComputeAngleBetween3v
+			cout << "-= Vector 1 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorA.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorA.m_fY = getfloat(iT);
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorA.m_fZ = getfloat(iT);
+
+			cout << endl << endl;
+
+			cout << "-= Vector 2 =-" << endl;
+			cout << "X: ";
+			cin >> iT;
+			VectorB.m_fX = getfloat(iT);
+
+			cout << "Y: ";
+			cin >> iT;
+			VectorB.m_fY = getfloat(iT);
+
+			cout << "Z: ";
+			cin >> iT;
+			VectorB.m_fZ = getfloat(iT);
 			af = ComputeAngleBetween(VectorA, VectorB);
 			cout << "The Angle Between The Two Vectors is: " << af << " Degrees" << endl;
 			amountoftests += 1;
@@ -216,6 +477,17 @@ int main() {
 		}
 
 		else if (choice == 12) { //ComputeDistancePointToLine
+			cout << "-= Point =-" << endl;
+
+			cout << "Point X: ";
+			cin >> VectorA.m_fX;
+
+			cout << "Point Y: ";
+			cin >> VectorA.m_fY;
+
+			cout << "Point Z: ";
+			cin >> VectorA.m_fZ;
+
 			af = ComputeDistancePointToLine(LineA, VectorA);
 			cout << "Distance of Point from line is: " << af;
 			amountoftests += 1;
@@ -273,11 +545,6 @@ int main() {
 			}
 			amountoftests += 1;
 			system("pause");
-		}
-
-		else if (choice == 20) { //ComputeIntersectionBetweenLines
-			ComputeIntersectionBetweenLines(LineA, LineB, VectorA);
-			amountoftests += 1;
 		}
 
 		else if (choice == 99) {

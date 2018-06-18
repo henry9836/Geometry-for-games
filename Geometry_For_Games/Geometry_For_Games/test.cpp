@@ -47,6 +47,7 @@ float getfloat(float infloat){
 	return infloat;
 }
 
+<<<<<<< HEAD
 
 bool testmefunctions() {
 
@@ -99,3 +100,5 @@ bool testmefunctions() {
 
 
 
+=======
+>>>>>>> a4014332530a6d0bddc1456ada130807900b5723
