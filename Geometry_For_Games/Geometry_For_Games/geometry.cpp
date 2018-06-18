@@ -789,7 +789,7 @@ system("cls");
 
 /*
 name of function : ComputeDistanceCircleToTriangle
-@author: Andres Villacreces
+@author: Andres Villacreces and Henry Oliver
 @parameter: Find the Distance Between the Center of a Circles and Triangle
 @return: float
 */
@@ -797,10 +797,10 @@ float ComputeDistanceCircleToTriangle(const TCircle& _krCircle, const TTriangle2
 
 	system("cls");
 
-float h, k, r, x1, y1, x2, y2, x3, y3, d, dx, dy;
+float h, k, r, x1, y1, x2, y2, x3, y3, cx, cy, d, dx, dy;
 
 std::cout << "COMPUTING DISTANCE BETWEEN THE CENTER OF A CIRCLE AND A TRIANGLE:" << endl << endl;
-
+/*
 std::cout << "1) Defining the EQUATION for the CIRCLE:" << endl << endl;
 
 std::cout << "      * Center of the Circle: Coordinate 'h'-- ";
@@ -813,6 +813,12 @@ cout << endl;
 std::cout << "  The EQUATION for the Circle is:" << endl;
 std::cout << "    * " << "(" << "x" << " - " << h << ")" << "^" << 2 << " + " << "(" << "y" << " - " << k << ")" << "^" << 2 << " = " << r << "^" << 2 << "\n";
 cout << endl << endl;
+*/
+
+cout << "Center Of Circle X: ";
+cin >> cx;
+cout << "Center Of Circle Y: ";
+cin >> cy;
 
 std::cout << "2) Defining the CENTROID of the TRIANGLE:" << endl << endl;
 
@@ -830,18 +836,19 @@ std::cout << "      * Third Point Y-Coordinate-- ";
 std::cin >> y3;
 cout << endl;
 std::cout << "  The CENTROID of the TRIANGLE is Defined by:" << endl;
-std::cout << "    * " << "M" << " = " << "[" << "(" << x1 << " + " << x2 << " + " << x3 << ")" << "/" << 2 << " , " 
-<< "(" << y1 << " + " << y2 << " + " << y3 << ")" << "/" << 2 << "]" << "\n";
+std::cout << "    * " << "M" << " = " << "[" << "(" << x1 << " + " << x2 << " + " << x3 << ")" << "/" << 3 << " , " 
+<< "(" << y1 << " + " << y2 << " + " << y3 << ")" << "/" << 3 << "]" << "\n";
 
-dx = ((x1 + x2 + x3) / 2);
-dy = ((y1 + y2 + y3) / 2);
+dx = ((x1 + x2 + x3) / 3);
+dy = ((y1 + y2 + y3) / 3);
 
 
 std::cout << "    * " << "M" << " = " << "[" << "(" << dx << " , " << dy << "]" << "\n";
 cout << endl << endl;
 
 std::cout << "3) Finding the Distance Between the Center of the CIRCLE and the TRIANGLE:" << endl << endl;
-d = sqrt((pow((dx - h), 2)) + (pow((dy - k), 2)));
+
+d = sqrt((dx - cx)*(dx - cx) + ((dy - cy)*(dy - cy)));
 
 return d;
 }
