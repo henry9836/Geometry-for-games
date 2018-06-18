@@ -70,6 +70,8 @@ bool testmefunctions() {
 	cout << "Testing..." << endl;
 
 	Equals(VectorAT, VectorBT);
+
+
 	Add(VectorAT, VectorBT, VectorCT);
 	Subtract(VectorAT, VectorBT, VectorCT);
 	ScaleVector(VectorAT, tfloat, VectorCT);

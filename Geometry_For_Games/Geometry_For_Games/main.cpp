@@ -126,7 +126,7 @@ int main() {
 		cout << "17. Line Sphere Intersection" << endl;
 		cout << "18. Line Plane Intersection" << endl;
 		cout << "19. Are Two Lines Intersecting" << endl;
-		cout << "20. Compute Intersection Between Two Lines" << endl;
+		cout << "1234. Test All Functions" << endl;
 		cout << endl;
 		cout << "Tested: " << amountoftests << " times" << endl;
 		cout << "99. Exit" << endl;
@@ -282,6 +282,12 @@ int main() {
 
 		else if (choice == 99) {
 			break;
+		}
+
+		else if (choice == 1234) {
+			bool ibooltmptest;
+			ibooltmptest = testmefunctions();
+			system("pause");
 		}
 
 		else {

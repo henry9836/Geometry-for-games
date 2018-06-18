@@ -1,2 +1,6 @@
-﻿  test.cpp
+﻿  geometry.cpp
+d:\users\andres.vil7740\documents\github\geometry-for-games\geometry_for_games\geometry_for_games\geometry.cpp(859): warning C4101: 't': unreferenced local variable
+  main.cpp
+  test.cpp
+  Generating Code...
   Geometry_For_Games.vcxproj -> D:\Users\Andres.Vil7740\Documents\GitHub\Geometry-for-games\Geometry_For_Games\Debug\Geometry_For_Games.exe
