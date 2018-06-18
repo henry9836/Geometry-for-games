@@ -101,7 +101,7 @@ int main() {
 	MoveWindow(console, w.left, w.top, 800, 500, TRUE); //Resize console window
 
 	int amountoftests = 0;
-	int iT = -1;
+	float iT = -1;
 
 	int choice = -1;
 	while (choice != 99) {
@@ -126,7 +126,7 @@ int main() {
 		cout << "17. Line Sphere Intersection" << endl;
 		cout << "18. Line Plane Intersection" << endl;
 		cout << "19. Are Two Lines Intersecting" << endl;
-		cout << "20. Compute Intersection Between Two Lines" << endl;
+		//cout << "20. Compute Intersection Between Two Lines" << endl;
 		cout << endl;
 		cout << "Tested: " << amountoftests << " times" << endl;
 		cout << "99. Exit" << endl;

@@ -1,25 +1,4 @@
 ﻿  main.cpp
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(141): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(145): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(149): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(154): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(158): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(162): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(179): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(183): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(187): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(192): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(196): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(200): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(334): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(338): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(342): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(349): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(353): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-e:\geometry for games\geometry_for_games\geometry_for_games\main.cpp(357): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   geometry.cpp
-e:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(1004): warning C4101: 'ans2': unreferenced local variable
-e:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(1004): warning C4101: 'ans1': unreferenced local variable
-e:\geometry for games\geometry_for_games\geometry_for_games\geometry.cpp(1004): warning C4101: 'ans3': unreferenced local variable
   Generating Code...
   Geometry_For_Games.vcxproj -> E:\Geometry for games\Geometry_For_Games\Debug\Geometry_For_Games.exe

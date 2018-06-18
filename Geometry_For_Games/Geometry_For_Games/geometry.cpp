@@ -911,7 +911,7 @@ TTriangle2& RotateTriangleAroundPoint(const TTriangle2& _krTriangle, const float
 
 	system("cls");
 
-	float t1x, t1y, t2x, t2y, t3x, t3y, cx, cy, angle, ans1, ans2, ans3;
+	float t1x, t1y, t2x, t2y, t3x, t3y, cx, cy, angle;
 
 	cout << "-= Triangle =-" << endl;
 	cout << "First Point X: ";
