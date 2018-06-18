@@ -2,6 +2,7 @@
 #include <string>
 #include "geometry.h"
 #include "test.h"
+#include "windows.h"
 
 TVector3 VectorAT;
 TVector3 VectorBT;
@@ -47,36 +48,46 @@ float getfloat(float infloat){
 	return infloat;
 }
 
-<<<<<<< HEAD
 
 bool testmefunctions() {
 
 	VectorAT.m_fX = 2;
-	VectorAT.m_fY = 3;
-	VectorAT.m_fZ = 5;
+	VectorAT.m_fY = 2;
+	VectorAT.m_fZ = 2;
 	VectorBT.m_fX = 2;
-	VectorBT.m_fY = 3;
-	VectorBT.m_fZ = 5;
+	VectorBT.m_fY = 2;
+	VectorBT.m_fZ = 2;
 	VectorCT.m_fX = 2;
-	VectorCT.m_fY = 3;
-	VectorCT.m_fZ = 5;
+	VectorCT.m_fY = 2;
+	VectorCT.m_fZ = 2;
 
 	const float tfloat = 4.0f;
 	
-	VectorA2DT.m_fX = 6;
-	VectorA2DT.m_fY = 3;
-	VectorB2DT.m_fX = 8;
-	VectorB2DT.m_fY = 9;
+	VectorA2DT.m_fX = 2;
+	VectorA2DT.m_fY = 2;
+	VectorB2DT.m_fX = 2;
+	VectorB2DT.m_fY = 2;
 
 	cout << "Testing..." << endl;
 
-	Equals(VectorAT, VectorBT);
-
-
-	Add(VectorAT, VectorBT, VectorCT);
-	Subtract(VectorAT, VectorBT, VectorCT);
-	ScaleVector(VectorAT, tfloat, VectorCT);
-	Magnitude(VectorCT);
+	bool result = Equals(VectorAT, VectorBT);
+	if (result == true) {
+		cout << "Equals Works!" << endl;
+	}
+	else {
+		cout << "Problem with Equals" << endl;
+	}
+	Beep(1, 1000);
+	VectorAT = Add(VectorAT, VectorBT, VectorCT);
+	cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+	system("pause");
+	VectorAT = Subtract(VectorAT, VectorBT, VectorCT);
+	cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+	system("pause");
+	VectorAT = ScaleVector(VectorAT, tfloat, VectorCT);
+	cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+	system("pause");
+	VectorAT = Magnitude(VectorCT);
 	DotProduct(VectorAT, VectorBT);
 	CrossProduct(VectorAT, VectorBT, VectorCT);
 	Normalise(VectorAT, VectorBT);
@@ -100,5 +111,3 @@ bool testmefunctions() {
 
 
 
-=======
->>>>>>> a4014332530a6d0bddc1456ada130807900b5723

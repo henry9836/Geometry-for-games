@@ -101,7 +101,7 @@ int main() {
 	MoveWindow(console, w.left, w.top, 800, 500, TRUE); //Resize console window
 
 	int amountoftests = 0;
-	int iT = -1;
+	float iT = -1;
 
 	int choice = -1;
 	while (choice != 99) {
