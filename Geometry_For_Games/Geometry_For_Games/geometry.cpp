@@ -1231,3 +1231,132 @@ TVector3& ComputeIntersectionBetweenLines(const T3DLine& _krLine1, const T3DLine
 	return IG;
 }
 
+
+
+
+/*
+#include <cstdlib>
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+float  x1, x2, x3, y1, y2, y3, z1, z2, z3;
+float Vx, Vy, Vz, Wx, Wy, Wz, Nx, Ny, Nz;
+
+
+
+std::cout << "COMPUTING DISTANCE FROM ANY POINT TO A LINE:" << endl << endl;
+
+std::cout << "1) Defining the Points of the Triangle:" << endl << endl;
+
+std::cout << "     Coordinates First Point:" << endl << endl;
+
+std::cout << "      * Enter the Coordinate x-- ";
+std::cin >> x1;
+std::cout << "      * Enter the Coordinate y-- ";
+std::cin >> y1;
+std::cout << "      * Enter the Coordinate Z-- ";
+std::cin >> z1;
+std::cout << endl;
+
+std::cout << "  The 3D Coordinate is:" << endl;
+std::cout << "    * " << "P1" << " = " << "(" << x1 << " , " << y1 << " , " << z1 << ")" << "\n";
+std::cout << endl << endl;
+
+std::cout << "     Coordinates Second Point:" << endl << endl;
+
+std::cout << "      * Enter the Coordinate x-- ";
+std::cin >> x2;
+std::cout << "      * Enter the Coordinate y-- ";
+std::cin >> y2;
+std::cout << "      * Enter the Coordinate Z-- ";
+std::cin >> z2;
+std::cout << endl;
+
+std::cout << "  The 3D Coordinate is:" << endl;
+std::cout << "    * " << "P2" << " = " << "(" << x2 << " , " << y2 << " , " << z2 << ")" << "\n";
+std::cout << endl << endl;
+
+std::cout << "     Coordinates Third Point:" << endl << endl;
+
+std::cout << "      * Enter the Coordinate x-- ";
+std::cin >> x3;
+std::cout << "      * Enter the Coordinate y-- ";
+std::cin >> y3;
+std::cout << "      * Enter the Coordinate Z-- ";
+std::cin >> z3;
+std::cout << endl;
+
+std::cout << "  The 3D Coordinate is:" << endl;
+std::cout << "    * " << "P3" << " = " << "(" << x3 << " , " << y3 << " , " << z3 << ")" << "\n";
+std::cout << endl << endl;
+
+std::cout << "    * " << "The cross product of two sides of the triangle" << "\n";
+std::cout << "    * " << "v = P2 - P1" << "\n";
+std::cout << "    * " << "w = P3 - P1" << "\n";
+std::cout << "    * " << "N = v * w" << "\n";
+std::cout << "    * " << "  N = (P2 - P1) * (P3 - P1)" << "\n";
+
+
+std::cout << "Vx = x2 - x1" << "\n";
+std::cout << "Vy = y2 - y1" << "\n";
+std::cout << "Vz = z2 - z1" << "\n";
+std::cout << "Wx = x3 - x1" << "\n";
+std::cout << "Wy = y3 - y1" << "\n";
+std::cout << "Wz = z3 - z1" << "\n";
+std::cout << endl;
+
+std::cout << "Nx=(Vy*Wz)-(Vz*Wy)" << "\n";
+std::cout << "Ny=(Vz*Wx)-(Vx*Wz)" << "\n";
+std::cout << "Nz=(Vx*Wy)-(Vy*Wx)" << "\n";
+std::cout << endl;
+
+std::cout << "      Nx" << " = "	<< "[" << y2 << " - " << "(" << y1 << ")" << "]" << "*" << "[" << z3 << " - " << "(" << z1 << ")" << "]" << " - "
+<< "[" << y3 << " - " << "(" << y1 << ")" << "]" << "*" << "[" << z2 << " - " << "(" << z1 << ")" << "]" << "\n";
+
+std::cout << "      Ny" << " = "	<< "[" << z2 << " - " << "(" << z1 << ")" << "]" << "*" << "[" << x3 << " - " << "(" << x1 << ")" << "]" << " - "
+<< "[" << x2 << " - " << "(" << x1 << ")" << "]" << "*" << "[" << z3 << " - " << "(" << z1 << ")" << "]" << "\n";
+
+std::cout << "      Nz" << " = "	<< "[" << x2 << " - " << "(" << x1 << ")" << "]" << "*" << "[" << y3 << " - " << "(" << y1 << ")" << "]" << " - "
+<< "[" << x3 << " - " << "(" << x1 << ")" << "]" << "*" << "[" << y3 << " - " << "(" << y1 << ")" << "]" << "\n";
+std::cout << endl;
+
+Vx = x2-x1;
+Vy = y2-y1;
+Vz = z2-z1;
+Wx = x3-x1;
+Wy = y3-y1;
+Wz = z3-z1;
+
+std::cout << "      Nx" << " = "	<< "[" << Vy << " * " << Wz << "]" << " - " << "[" << Vz << " * " << Wy << "]" << "\n";
+std::cout << "      Ny" << " = "	<< "[" << Vz << " * " << Wx << "]" << " - " << "[" << Vx << " * " << Wz << "]" << "\n";
+std::cout << "      Nz" << " = "	<< "[" << Vx << " * " << Wy << "]" << " - " << "[" << Vy << " * " << Wx << "]" << "\n";
+std::cout << endl;
+
+Nx = (Vy*Wz)-(Vz*Wy);
+Ny = (Vz*Wx)-(Vx*Wz);
+Nz = (Vx*Wy)-(Vy*Wx);
+
+std::cout << "      Nx" << " = "	<< Nx << "\n";
+std::cout << "      Ny" << " = "	<< Ny << "\n";
+std::cout << "      Nz" << " = "	<< Nz << "\n";
+
+
+
+
+
+
+
+
+
+
+system("pause");
+return(0);
+}
+
+
+
+*/

@@ -33,9 +33,9 @@ TVector3 m_v3p3;
 };
 
 struct T3DLine {
-TVector3 m_v3q; //point on the line     TVector3 m_v3v; //direction vector along the line }; 
-struct TCircle { TVector2 m_v2center;     float m_fRadius; };
-};
+TVector3 m_v3q; //point on the line     
+TVector3 m_v3v; //direction vector along the line 
+}; 
 
 struct TCircle {
 TVector2 m_v2center;
