@@ -10,3 +10,4 @@ int getint(int inint) {
 float getfloat(float infloat){
 	return infloat;
 }
+

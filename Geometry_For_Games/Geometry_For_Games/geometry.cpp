@@ -31,6 +31,8 @@ T3DLine LineGB;
 T3DLine LineGC;
 T3DLine LineGD;
 
+TTriangle2 TriangleA2D;
+
 /*
 name of function: Equals
 @author: Henry Oliver
@@ -38,36 +40,13 @@ name of function: Equals
 @return: true or false
 */
 bool Equals(TVector3& _krA, TVector3& _krB) {
-	system("cls");
+
+	VectorAG = _krA;
+	VectorBG = _krB;
+
 	float iT = 0;
+
 	bool equals = false;
-	cout << "-= Vector 1 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	_krA.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	_krA.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	_krA.m_fZ = getfloat(iT);
-
-	cout << endl << endl;
-
-	cout << "-= Vector 2 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	_krB.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	_krB.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	_krB.m_fZ = getfloat(iT);
 
 	if ((_krA.m_fX == _krB.m_fX) && (_krA.m_fY == _krB.m_fY) && (_krA.m_fZ == _krB.m_fZ)) {
 		equals = true;
@@ -84,40 +63,14 @@ name of function: Add
 */
 TVector3& Add(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
 
-	system("cls");
+	VectorAG = _krA;
+	VectorBG = _krB;
+
 	float iT = 0;
-
-	cout << "-= Vector 1 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	VectorAG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	VectorAG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	VectorAG.m_fZ = getfloat(iT);
-
-	cout << "-= Vector 2 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	VectorBG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	VectorBG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	VectorBG.m_fZ = getfloat(iT);
 
 	_rResultant.m_fX = (VectorAG.m_fX + VectorBG.m_fX);
 	_rResultant.m_fY = (VectorAG.m_fY + VectorBG.m_fY);
 	_rResultant.m_fZ = (VectorAG.m_fZ + VectorBG.m_fZ);
-	
-
 
 	return _rResultant;
 }
@@ -129,34 +82,9 @@ name of function : Subtract
 @return: _rResultant vector(struct)
 */
 TVector3& Subtract(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
-	system("cls");
-	float iT = 0;
 
-	cout << "-= Vector 1 (Original) =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	VectorAG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	VectorAG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	VectorAG.m_fZ = getfloat(iT);
-
-	cout << "-= Vector 2 (To Subtract) =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	VectorBG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	VectorBG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	VectorBG.m_fZ = getfloat(iT);
+	VectorAG = _krA;
+	VectorBG = _krB;
 
 	_rResultant.m_fX = (VectorAG.m_fX - VectorBG.m_fX);
 	_rResultant.m_fY = (VectorAG.m_fY - VectorBG.m_fY);
@@ -173,31 +101,17 @@ name of function : ScaleVector
 */
 TVector3& ScaleVector(const TVector3& _krA, const float _kfScalar, TVector3& _rResultant) {
 
-	system("cls");
-	float iT;
-	float scalar;
+	VectorAG = _krA;
+	float iT = 0;
+	float scalar = _kfScalar;
 
-	cout << "Scalar: ";
-	cin >> scalar;
-
-	cout << "-= Vector =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	iT = iT * scalar;
-	VectorAG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	iT = iT * scalar;
-	VectorAG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	iT = iT * scalar;
-	VectorAG.m_fZ = getfloat(iT);
+	VectorAG.m_fX = (VectorAG.m_fX * scalar);
+	VectorAG.m_fY = (VectorAG.m_fY * scalar);
+	VectorAG.m_fZ = (VectorAG.m_fZ * scalar);
 
 	cout << endl << endl;
-
+	iT = iT * scalar;
+	
 	_rResultant = VectorAG;
 
 	return  _rResultant;
@@ -211,22 +125,10 @@ name of function : Magnitude
 @return: float (result)
 */
 float Magnitude(const TVector3& _krA) {
-	system("cls");
-	float iT = 0;
-	float result = 0;
+	VectorAG = _krA;
+	
 
-	cout << "-= Vector =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	VectorAG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	VectorAG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	VectorAG.m_fZ = getfloat(iT);
+	float result;
 
 	result = sqrt((VectorAG.m_fX*VectorAG.m_fX) + (VectorAG.m_fY*VectorAG.m_fY) + (VectorAG.m_fZ*VectorAG.m_fZ));
 
@@ -240,37 +142,11 @@ name of function : DotProduct
 @return: float (result)
 */
 float DotProduct(const TVector3& _krA, const TVector3& _krB) {
-	system("cls");
-	float iT = 0;
+	
+	VectorAG = _krA;
+	VectorBG = _krB;
+	
 	float result = 0;
-
-	cout << "-= Vector 1 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	VectorAG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	VectorAG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	VectorAG.m_fZ = getfloat(iT);
-
-	cout << endl << endl;
-
-	cout << "-= Vector 2 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	VectorBG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	VectorBG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	VectorBG.m_fZ = getfloat(iT);
 
 	result = ((VectorAG.m_fX + VectorBG.m_fX)+(VectorAG.m_fY + VectorBG.m_fY)+(VectorBG.m_fZ + VectorBG.m_fZ));
 
@@ -285,36 +161,9 @@ name of function : CrossProduct
 */
 TVector3& CrossProduct(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
 
-	system("cls");
-	float iT = 0;
-
-	cout << "-= Vector 1 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	VectorAG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	VectorAG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	VectorAG.m_fZ = getfloat(iT);
-
-	cout << endl << endl;
-
-	cout << "-= Vector 2 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	VectorBG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	VectorBG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	VectorBG.m_fZ = getfloat(iT);
+	VectorAG = _krA;
+	VectorBG = _krB;
+	VectorCG = _rResultant;
 
 	VectorCG.m_fX = ((VectorAG.m_fY*VectorBG.m_fZ) - (VectorAG.m_fZ*VectorBG.m_fY));
 	VectorCG.m_fY = ((VectorAG.m_fZ*VectorBG.m_fX) - (VectorAG.m_fX*VectorBG.m_fZ));
@@ -333,23 +182,12 @@ name of function : Normalise
 */
 TVector3& Normalise(const TVector3& _krA, TVector3& _rResultant) {
 
-	system("cls");
+	VectorAG = _krA;
 	float iT = 0;
 	float AL = 0;
 	float BL = 0;
 
-	cout << "-= Vector 1 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	VectorAG.m_fX = getfloat(iT);
 
-	cout << "Y: ";
-	cin >> iT;
-	VectorAG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	VectorAG.m_fZ = getfloat(iT);
 
 	//|V| = sqrt(x*x + y*y + z*z)
 
@@ -374,39 +212,13 @@ name of function : Projection
 */
 TVector3& Projection(const TVector3& _krA, const TVector3& _krB, TVector3& _rResultant) {
 
-	system("cls");
 	float iT = 0;
 	float dot_p = 0;
 	float mag = 0;
 	float ans = 0;
 
-	cout << "-= Vector 1 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	VectorAG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	VectorAG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	VectorAG.m_fZ = getfloat(iT);
-
-	cout << endl << endl;
-
-	cout << "-= Vector 2 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	VectorBG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	VectorBG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	VectorBG.m_fZ = getfloat(iT);
+	VectorAG = _krA;
+	VectorBG = _krB;
 
 	dot_p = ((VectorAG.m_fX*VectorBG.m_fX)+(VectorAG.m_fY*VectorBG.m_fY)+(VectorAG.m_fZ * VectorBG.m_fZ));
 
@@ -427,7 +239,6 @@ name of function : ComputeAngleBetween
 */
 float ComputeAngleBetween(const TVector2& _krA, const TVector2& _krB) {
 
-	system("cls");
 	float iT = 0;
 	float dot_p = 0;
 	float mag = 0;
@@ -436,25 +247,8 @@ float ComputeAngleBetween(const TVector2& _krA, const TVector2& _krB) {
 	float length_B;
 	float dot_product;
 
-	cout << "-= Vector 1 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	Vector2DGA.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	Vector2DGA.m_fY = getfloat(iT);
-
-	cout << endl << endl;
-
-	cout << "-= Vector 2 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	Vector2DGB.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	Vector2DGB.m_fY = getfloat(iT);
+	Vector2DGA = _krA;
+	Vector2DGB = _krB;
 
 	length_A = sqrt((Vector2DGA.m_fX * Vector2DGA.m_fX) + (Vector2DGA.m_fY * Vector2DGA.m_fY));
 	length_B = sqrt((Vector2DGB.m_fX * Vector2DGB.m_fX) + (Vector2DGB.m_fY * Vector2DGB.m_fY));
@@ -481,7 +275,6 @@ name of function : ComputeAngleBetween
 */
 float ComputeAngleBetween(const TVector3& _krA, const TVector3& _krB) {
 
-	system("cls");
 	float iT = 0;
 	float dot_p = 0;
 	float mag = 0;
@@ -490,33 +283,8 @@ float ComputeAngleBetween(const TVector3& _krA, const TVector3& _krB) {
 	float length_B;
 	float dot_product;
 
-	cout << "-= Vector 1 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	VectorAG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	VectorAG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	VectorAG.m_fZ = getfloat(iT);
-
-	cout << endl << endl;
-
-	cout << "-= Vector 2 =-" << endl;
-	cout << "X: ";
-	cin >> iT;
-	VectorBG.m_fX = getfloat(iT);
-
-	cout << "Y: ";
-	cin >> iT;
-	VectorBG.m_fY = getfloat(iT);
-
-	cout << "Z: ";
-	cin >> iT;
-	VectorBG.m_fZ = getfloat(iT);
+	VectorAG = _krA;
+	VectorBG = _krB;
 
 	length_A = sqrt((VectorAG.m_fX * VectorAG.m_fX) + (VectorAG.m_fY * VectorAG.m_fY) + (VectorAG.m_fZ * VectorAG.m_fZ));
 	length_B = sqrt((VectorBG.m_fX * VectorBG.m_fX) + (VectorBG.m_fY * VectorBG.m_fY) + (VectorBG.m_fZ * VectorBG.m_fZ));
@@ -556,18 +324,9 @@ float ComputeDistancePointToLine(const T3DLine& _krLine, const TVector3& _krPoin
 
 	float distance;
 
+	VectorAG =_krPoint;
+
 	float iT;
-
-	cout << "-= Point =-" << endl;
-
-	cout << "Point X: ";
-	cin >> VectorAG.m_fX;
-
-	cout << "Point Y: ";
-	cin >> VectorAG.m_fY;
-
-	cout << "Point Z: ";
-	cin >> VectorAG.m_fZ;
 
 	cout << "-= Line =-" << endl;
 
@@ -797,7 +556,7 @@ float ComputeDistanceCircleToTriangle(const TCircle& _krCircle, const TTriangle2
 
 	system("cls");
 
-float h, k, r, x1, y1, x2, y2, x3, y3, cx, cy, d, dx, dy;
+float x1, y1, x2, y2, x3, y3, cx, cy, d, dx, dy;
 
 std::cout << "COMPUTING DISTANCE BETWEEN THE CENTER OF A CIRCLE AND A TRIANGLE:" << endl << endl;
 /*
@@ -1143,98 +902,50 @@ bool IsIntersection(const T3DLine& _krLine1, const T3DLine& _krLine2) {
 }
 
 /*
-name of function : ComputeIntersectionBetweenLines
+name of function : RotateTriangleAroundPoint
 @author: Henry Oliver
-@parameter: Find if the Point of Intersection Between a Line and another Line
-@return: TVector3
+@parameter: Rotates a triangle around a point
+@return: TTriangle2
 */
-TVector3& ComputeIntersectionBetweenLines(const T3DLine& _krLine1, const T3DLine& _krLine2, TVector3& _rIntersectionPoint) {
+TTriangle2& RotateTriangleAroundPoint(const TTriangle2& _krTriangle, const float _kfRotAngleInRadians, const TVector2& _krRotAroundPoint, TTriangle2& _rRotatedTriangle) {
 
 	system("cls");
 
-	float d1, d2, d3, d4, d5, mub, ndm, n, m;
+	float t1x, t1y, t2x, t2y, t3x, t3y, cx, cy, angle, ans1, ans2, ans3;
 
-	cout << "Line 1 first point X:";
-	cin >> VectorAG.m_fX;
-	cout << "Line 1 first point Y:";
-	cin >> VectorAG.m_fY;
-	cout << "Line 1 first point Z:";
-	cin >> VectorAG.m_fZ;
+	cout << "-= Triangle =-" << endl;
+	cout << "First Point X: ";
+	cin >> t1x;
+	cout << "First Point Y: ";
+	cin >> t1y;
+	cout << "Second Point X: ";
+	cin >> t2x;
+	cout << "Second Point Y: ";
+	cin >> t2y;
+	cout << "Third Point X: ";
+	cin >> t3x;
+	cout << "Third Point Y: ";
+	cin >> t3y;
+	
+	cout << endl << endl;
 
-	cout << "Line 1 second point X:";
-	cin >> VectorBG.m_fX;
-	cout << "Line 1 second point Y:";
-	cin >> VectorBG.m_fY;
-	cout << "Line 1 second point Z:";
-	cin >> VectorBG.m_fZ;
+	cout << "-= Circle =-" << endl;
+	cout << "Center of circle X: ";
+	cin >> cx;
+	cout << "Center of circle Y: ";
+	cin >> cy;
 
 	cout << endl << endl;
 
-	cout << "Line 2 first point X:";
-	cin >> VectorCG.m_fX;
-	cout << "Line 2 first point Y:";
-	cin >> VectorCG.m_fY;
-	cout << "Line 2 first point Z:";
-	cin >> VectorCG.m_fZ;
+	cout << " -= Angle =- " << endl;
 
-	cout << "Line 2 second point X:";
-	cin >> VectorDG.m_fX;
-	cout << "Line 2 second point Y:";
-	cin >> VectorDG.m_fY;
-	cout << "Line 2 second point Z:";
-	cin >> VectorDG.m_fZ;
+	cout << "Rotation in Radians: ";
+	cin >> angle;
 
-	cout << endl << endl;
+	/* COMPUTE */
 
-	VectorEG.m_fX = (VectorAG.m_fX - VectorCG.m_fX);
-	VectorEG.m_fY = (VectorAG.m_fY - VectorCG.m_fY);
-	VectorEG.m_fZ = (VectorAG.m_fZ - VectorCG.m_fZ);
 
-	VectorFG.m_fX = (VectorDG.m_fX - VectorCG.m_fX);
-	VectorFG.m_fY = (VectorDG.m_fY - VectorCG.m_fY);
-	VectorFG.m_fZ = (VectorDG.m_fZ - VectorCG.m_fZ);
 
-	if (abs(VectorFG.m_fX) < EPS && abs(VectorFG.m_fY) < EPS && abs(VectorFG.m_fZ) < EPS) {
-		system("pause");
-		return VectorIG; //NO COLL
-	}
-
-	VectorGG.m_fX = (VectorBG.m_fX - VectorAG.m_fX);
-	VectorGG.m_fY = (VectorBG.m_fY - VectorAG.m_fY);
-	VectorGG.m_fZ = (VectorBG.m_fZ - VectorAG.m_fZ);
-
-	if (abs(VectorGG.m_fX) < EPS && abs(VectorGG.m_fY) < EPS && abs(VectorGG.m_fZ) < EPS) {
-		system("pause");
-		return VectorIG; //NO COLL
-	}
-
-	d1 = VectorEG.m_fX * VectorFG.m_fX + VectorEG.m_fY * VectorFG.m_fY + VectorEG.m_fZ * VectorFG.m_fZ;
-	d2 = VectorFG.m_fX * VectorGG.m_fX + VectorFG.m_fY * VectorGG.m_fY + VectorFG.m_fZ * VectorGG.m_fZ;
-	d3 = VectorEG.m_fX * VectorGG.m_fX + VectorEG.m_fY * VectorGG.m_fY + VectorEG.m_fZ * VectorGG.m_fZ;
-	d4 = VectorFG.m_fX * VectorEG.m_fX + VectorFG.m_fY * VectorEG.m_fY + VectorFG.m_fZ * VectorEG.m_fZ;
-	d5 = VectorGG.m_fX * VectorGG.m_fX + VectorGG.m_fY * VectorGG.m_fY + VectorGG.m_fZ * VectorGG.m_fZ;
-
-	m = d5 * d4 - d2 * d2;
-	if (abs(m) < EPS) {
-		system("pause");
-		return VectorIG; //NO COLL
-	}
-
-	/* COLLISION CONFIRMED FROM HERE ON */
-
-	n = d1 * d2 - d3 * d4;
-
-	ndm = n / m;
-	mub = (d1 + d2 * (ndm)) / d4;
-
-	VectorIG.m_fX = VectorCG.m_fX + mub * VectorFG.m_fX;
-	VectorIG.m_fY = VectorCG.m_fY + mub * VectorFG.m_fY;
-	VectorIG.m_fZ = VectorCG.m_fZ + mub * VectorFG.m_fZ;
-
-	cout << "Point of intersection: (" << VectorIG.m_fX << ", " << VectorIG.m_fY << ", " << VectorIG.m_fZ << ")" << endl;
-
-	system("pause");
-
-	return VectorIG;
+	return TriangleA2D;
 }
 

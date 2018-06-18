@@ -86,7 +86,7 @@ float ComputeDistanceCircleToCircle(const TCircle& _krCircle1, const TCircle& _k
 
 //Distance between center of the circle and triangle 
 
-float ComputeDistanceCircleToTriangle(const TCircle& _krCircle, const TTriangle2& _krTriangle);
+float ComputeDistanceCircleToTriangle(const TCircle& _krCircle, const TTriangle2& _krTriangle); //done
 
 EIntersections ComputeLineSphereIntersection(const T3DLine& _krLine, const TSphere& _krSphere, TVector3& _rv3IntersectionPoint1, TVector3& _rv3IntersectionPoint2); //done
 
