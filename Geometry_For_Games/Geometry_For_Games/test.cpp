@@ -55,6 +55,8 @@ bool testmefunctions() {
 
 	system("cls");
 
+
+
 	VectorAT.m_fX = 1;
 	VectorAT.m_fY = 1;
 	VectorAT.m_fZ = 2;
@@ -64,6 +66,9 @@ bool testmefunctions() {
 	VectorCT.m_fX = 7;
 	VectorCT.m_fY = 9;
 	VectorCT.m_fZ = 8;
+
+	PlaneAT.m_v3normal = VectorAT;
+	PlaneAT.m_v3point = VectorCT;
 
 	const float tfloat = 4.0f;
 	
@@ -187,13 +192,63 @@ bool testmefunctions() {
 
 	cout << endl;
 
-	Projection(VectorAT, VectorBT, VectorCT);
+	VectorAT = Projection(VectorAT, VectorBT, VectorCT);
+	if (((VectorAT.m_fX > -0.911323) && (VectorAT.m_fX < -0.911321)) && ((VectorAT.m_fY > 0.130188) && (VectorAT.m_fY < 0.130190)) && ((VectorAT.m_fZ > 0.390566) && (VectorAT.m_fZ < 0.390568))) {
+		cout << "Projection Works!" << endl;
+		Beep(1000, 50);
+	}
+	else {
+		cout << "Problem with Projection" << endl;
+		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		Beep(300, 1000);
+		system("pause");
+	}
 
 	cout << endl;
 
-	ComputeAngleBetween(VectorA2DT, VectorB2DT);
-	ComputeAngleBetween(VectorAT, VectorBT);
-	ComputeDistancePointToLine(LineAT, VectorAT);
+	testfloat = ComputeAngleBetween(VectorA2DT, VectorB2DT);
+	if ((testfloat < 29.229) && (testfloat > 29.227)) {
+		cout << "Compute Angle Between Works!" << endl;
+		Beep(1000, 50);
+	}
+	else {
+		cout << "Problem with Compute Angle Between" << endl;
+		cout << "Result: " << testfloat << endl;
+		Beep(300, 1000);
+		system("pause");
+	}
+	
+	cout << endl;
+
+	testfloat = ComputeDistancePointToLine(LineAT, VectorAT);
+	if ((testfloat < 29.229) && (testfloat > 29.227)) {
+		cout << "Compute Distance Point To Line Between Works!" << endl;
+		Beep(1000, 50);
+	}
+	else {
+		cout << "Problem with Compute Distance Point To Line" << endl;
+		cout << "Result: " << testfloat << endl;
+		Beep(300, 1000);
+		system("pause");
+	}
+	cout << endl;
+
+	testfloat = ComputeDistancePointToPlane(PlaneAT, VectorAT);
+	if ((testfloat < 13.0640) && (testfloat > 13.0638)) {
+		cout << "Compute Distance Point To Plane Works!" << endl;
+		Beep(1000, 50);
+	}
+	else {
+		cout << "Problem with Compute Distance Point To Plane" << endl;
+		cout << "Result: " << testfloat << endl;
+		Beep(300, 1000);
+		system("pause");
+	}
+
+
+	cout << endl << endl << "-= Testing finished! =-" << endl;
+
+	system("pause");
 
 	return true;
 }
