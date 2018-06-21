@@ -1,0 +1,1 @@
+Functions 1-19 are done
