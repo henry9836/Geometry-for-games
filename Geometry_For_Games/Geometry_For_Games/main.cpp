@@ -126,11 +126,8 @@ int main() {
 		cout << "17. Line Sphere Intersection" << endl;
 		cout << "18. Line Plane Intersection" << endl;
 		cout << "19. Are Two Lines Intersecting" << endl;
-<<<<<<< HEAD
 		//cout << "20. Compute Intersection Between Two Lines" << endl;
-=======
 		cout << "1234. Test All Functions" << endl;
->>>>>>> 11de05cca16461314281ebe0b89145c773c4248c
 		cout << endl;
 		cout << "Tested: " << amountoftests << " times" << endl;
 		cout << "99. Exit" << endl;

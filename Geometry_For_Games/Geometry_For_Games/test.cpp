@@ -87,7 +87,7 @@ bool testmefunctions() {
 	VectorAT = ScaleVector(VectorAT, tfloat, VectorCT);
 	cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
 	system("pause");
-	VectorAT = Magnitude(VectorCT);
+	//VectorAT = Magnitude(VectorCT);
 	DotProduct(VectorAT, VectorBT);
 	CrossProduct(VectorAT, VectorBT, VectorCT);
 	Normalise(VectorAT, VectorBT);
