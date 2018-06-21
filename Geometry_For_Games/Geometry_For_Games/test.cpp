@@ -24,6 +24,7 @@ T3DLine LineBT;
 T3DLine LineCT;
 T3DLine LineDT;
 
+TTriangle2 TTriangle2AT;
 
 TCircle CircleAT;
 TCircle CircleBT;
@@ -54,7 +55,8 @@ float getfloat(float infloat){
 bool testmefunctions() {
 
 	system("cls");
-
+	system("COLOR 0E");
+	
 
 
 	VectorAT.m_fX = 1;
@@ -70,12 +72,19 @@ bool testmefunctions() {
 	PlaneAT.m_v3normal = VectorAT;
 	PlaneAT.m_v3point = VectorCT;
 
+
+
 	const float tfloat = 4.0f;
 	
 	VectorA2DT.m_fX = 3;
 	VectorA2DT.m_fY = 5;
 	VectorB2DT.m_fX = 3;
 	VectorB2DT.m_fY = 99;
+
+	CircleAT.m_fRadius = 2;
+	CircleAT.m_v2center = VectorA2DT;
+	CircleBT.m_fRadius = 4;
+	CircleBT.m_v2center = VectorB2DT;
 
 	cout << "Testing..." << endl;
 
@@ -87,6 +96,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Equals" << endl;
 		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -102,6 +112,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Add" << endl;
 		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -116,6 +127,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Subtract" << endl;
 		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -130,6 +142,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with ScaleVector" << endl;
 		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -144,6 +157,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Magnitude" << endl;
 		cout << "Result: " << testfloat << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -158,6 +172,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with DotProduct" << endl;
 		cout << "Result: " << testfloat << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -172,6 +187,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with CrossProduct" << endl;
 		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -186,6 +202,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Normalise" << endl;
 		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -200,6 +217,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Projection" << endl;
 		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -214,6 +232,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Compute Angle Between" << endl;
 		cout << "Result: " << testfloat << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -229,6 +248,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Compute Distance Point To Line" << endl;
 		cout << "Result: " << testfloat << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -242,15 +262,68 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Compute Distance Point To Plane" << endl;
 		cout << "Result: " << testfloat << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
 
+	cout << endl;
+
+	testfloat = ComputeDistanceCircleToCircle(CircleAT, CircleBT);
+	if (testfloat == 94) {
+		cout << "Compute Distance Circle To Circle Works!" << endl;
+		Beep(1000, 50);
+	}
+	else {
+		cout << "Problem with Compute Distance Circle To Circle" << endl;
+		cout << "Result: " << testfloat << endl;
+		system("COLOR 0C");
+		Beep(300, 1000);
+		system("pause");
+	}
+
+	cout << endl;
+	
+	testfloat = ComputeDistancePointToSphere(SphereAT, VectorAT);
+	if ((testfloat < 1.1) && (testfloat > 0.9)) {
+		cout << "Compute Distance Point To Circle Works!" << endl;
+		Beep(1000, 50);
+	}
+	else {
+		cout << "Problem with Compute Distance Point To Circle" << endl;
+		cout << "Result: " << testfloat << endl;
+		system("COLOR 0C");
+		Beep(300, 1000);
+		system("pause");
+	}
+	
+	cout << endl;
+
+	CircleAT.m_v2center.m_fX = 3;
+	CircleAT.m_v2center.m_fY = 5;
+	TTriangle2AT.m_v2p1.m_fY = 4;
+	TTriangle2AT.m_v2p1.m_fX = 8;
+	TTriangle2AT.m_v2p2.m_fY = 3;
+	TTriangle2AT.m_v2p2.m_fX = 12;
+	TTriangle2AT.m_v2p3.m_fY = 6;
+	TTriangle2AT.m_v2p3.m_fX = 14;
+
+	result = ComputeDistanceCircleToTriangle(CircleAT, TTriangle2AT);
+
+	if (result == 1) {
+		cout << "Compute Distance Circle To Triangle works!";
+	}
+	else {
+		cout << "Problem with Compute Distance Circle To Triangle" << endl;
+		cout << "Result: " << result << endl;
+		system("COLOR 0C");
+		Beep(300, 1000);
+		system("pause");
+	}
 
 	cout << endl << endl << "-= Testing finished! =-" << endl;
 
-	system("pause");
-
+	//system("pause");
 	return true;
 }
 

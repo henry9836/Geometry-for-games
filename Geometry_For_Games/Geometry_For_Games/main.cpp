@@ -45,6 +45,7 @@ TSphere SphereD;
 
 TTriangle2 LineA2D;
 TTriangle2 LineB2D;
+TTriangle2 TTriangle2A;
 
 
 float af;
@@ -106,6 +107,7 @@ int main() {
 	int choice = -1;
 	while (choice != 99) {
 		system("cls");
+		system("COLOR 07");
 		cout << "-= Main Menu =-" << endl << endl;
 		cout << "1. Vector Equals Vector" << endl;
 		cout << "2. Add Two Vectors" << endl;
@@ -503,6 +505,20 @@ int main() {
 		}
 
 		else if (choice == 14) { //ComputeDistancePointToSphere
+			cout << "Sphere Center X:";
+			cin >> SphereA.m_v3center.m_fX;
+			cout << "Sphere Center Y:";
+			cin >> SphereA.m_v3center.m_fY;
+			cout << "Sphere Center Z:";
+			cin >> SphereA.m_v3center.m_fZ;
+			cout << "Sphere Radius: ";
+			cin >> SphereA.m_fRadius;
+			cout << "Point X: ";
+			cin >> VectorA.m_fX;
+			cout << "Point Y: ";
+			cin >> VectorA.m_fY;
+			cout << "Point Z: ";
+			cin >> VectorA.m_fZ;
 			af = ComputeDistancePointToSphere(SphereA, VectorA);
 			cout << "    The Distance Between POINT and Center of the SPHERE is:  " << endl << "     * " << "[" << af << "]" << endl;
 			amountoftests += 1;
@@ -517,6 +533,23 @@ int main() {
 		}
 
 		else if (choice == 16) { //ComputeDistanceCircleToTriangle
+			system("cls");
+			cout << "Circle Center X: ";
+			cin >> CircleA.m_v2center.m_fX;
+			cout << "Circle Center Y: ";
+			cin >> CircleA.m_v2center.m_fY;
+			cout << "Triangle Point 1 Y: ";
+			cin >> TTriangle2A.m_v2p1.m_fY;
+			cout << "Triangle Point 1 X: ";
+			cin >> TTriangle2A.m_v2p1.m_fX;
+			cout << "Triangle Point 2 Y: ";
+			cin >> TTriangle2A.m_v2p2.m_fY;
+			cout << "Triangle Point 2 X: ";
+			cin >> TTriangle2A.m_v2p2.m_fX;
+			cout << "Triangle Point 3 Y: ";
+			cin >> TTriangle2A.m_v2p3.m_fY;
+			cout << "Triangle Point 3 X: ";
+			cin >> TTriangle2A.m_v2p3.m_fX;
 			af = ComputeDistanceCircleToTriangle(CircleA, LineA2D);
 			cout << "    The Distance Between the Center of the CIRCLE and the TRIANGLE is:  " << endl << "     * " << "[" << af << "]" << endl;
 			amountoftests += 1;

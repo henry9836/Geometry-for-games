@@ -424,6 +424,20 @@ name of function : ComputeDistancePointToSphere
 @parameter: Find the Distance Between a point and the Center of a Sphere
 @return: float
 */
+float ComputeDistancePointToSphere(const TSphere& _krSphere, const TVector3& _krPoint)
+{
+	TVector3 _rResultant;
+	TVector3 VecPo;
+	TVector3 DisSpPo = Subtract(_krPoint, _krSphere.m_v3center, _rResultant);
+
+	VecPo = _krPoint;
+
+	float d = sqrt(pow(_krSphere.m_v3center.m_fX - VecPo.m_fX, 2) + pow(_krSphere.m_v3center.m_fY - VecPo.m_fY, 2) + pow(_krSphere.m_v3center.m_fZ - VecPo.m_fZ, 2)) - _krSphere.m_fRadius;
+
+	return d;
+
+}
+/*
 float ComputeDistancePointToSphere(const TSphere& _krSphere, const TVector3& _krPoint){
 
 system("cls");
@@ -466,7 +480,7 @@ system("cls");
 	d = sqrt((pow((x - h), 2)) + (pow((y - k), 2)) + (pow((z - j), 2))) - r;
 	
 	return d;
-}
+}*/
 
 /*
 name of function : ComputeDistanceCircleToCircle
@@ -474,7 +488,21 @@ name of function : ComputeDistanceCircleToCircle
 @parameter: Find the Distance Between the Center of two Circles
 @return: float
 */
-float ComputeDistanceCircleToCircle(const TCircle& _krCircle1, const TCircle& _krCircle2) {
+float ComputeDistanceCircleToCircle(const TCircle& _krCircle1, const TCircle& _krCircle2)
+{
+	TVector2 _rResultant;
+
+	_rResultant.m_fX = _krCircle1.m_v2center.m_fX - _krCircle2.m_v2center.m_fX;
+	_rResultant.m_fY = _krCircle1.m_v2center.m_fY - _krCircle2.m_v2center.m_fY;
+
+	float d = sqrt(pow(_rResultant.m_fX, 2) + pow(_rResultant.m_fY, 2));
+
+
+	return d;
+
+}
+
+/*float ComputeDistanceCircleToCircle(const TCircle& _krCircle1, const TCircle& _krCircle2) {
 
 system("cls");
 
@@ -512,7 +540,7 @@ system("cls");
 	d = sqrt((pow((h2 - h1), 2)) + (pow((k2 - k1), 2)));
 	
 	return d;
-}
+}*/
 
 /*
 name of function : ComputeDistanceCircleToTriangle
@@ -520,6 +548,25 @@ name of function : ComputeDistanceCircleToTriangle
 @parameter: Find the Distance Between the Center of a Circles and Triangle
 @return: float
 */
+float ComputeDistanceCircleToTriangle(const TCircle& _krCircle, const TTriangle2& _krTriangle)
+{
+	TVector2 Trianglecenter;
+	TVector2 EndResult;
+
+	Trianglecenter.m_fX = (_krTriangle.m_v2p1.m_fX + _krTriangle.m_v2p2.m_fX + _krTriangle.m_v2p3.m_fX) / 3;
+	Trianglecenter.m_fY = (_krTriangle.m_v2p1.m_fY + _krTriangle.m_v2p2.m_fY + _krTriangle.m_v2p3.m_fY) / 3;
+
+	EndResult.m_fX = _krCircle.m_v2center.m_fX - Trianglecenter.m_fX;
+	EndResult.m_fY = _krCircle.m_v2center.m_fY - Trianglecenter.m_fY;
+
+	float d = sqrt(pow(EndResult.m_fX, 2) + pow(EndResult.m_fY, 2));
+
+
+	return d;
+}
+
+
+/*
 float ComputeDistanceCircleToTriangle(const TCircle& _krCircle, const TTriangle2& _krTriangle) {
 
 	system("cls");
@@ -541,7 +588,7 @@ std::cout << "  The EQUATION for the Circle is:" << endl;
 std::cout << "    * " << "(" << "x" << " - " << h << ")" << "^" << 2 << " + " << "(" << "y" << " - " << k << ")" << "^" << 2 << " = " << r << "^" << 2 << "\n";
 cout << endl << endl;
 */
-
+/*
 cout << "Center Of Circle X: ";
 cin >> cx;
 cout << "Center Of Circle Y: ";
@@ -579,7 +626,7 @@ d = sqrt((dx - cx)*(dx - cx) + ((dy - cy)*(dy - cy)));
 
 return d;
 }
-
+*/
 /*
 name of function : ComputeLineSphereIntersection
 @author: Andres Villacreces
