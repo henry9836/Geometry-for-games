@@ -228,6 +228,11 @@ TVector3& Projection(const TVector3& _krA, const TVector3& _krB, TVector3& _rRes
 
 	cout << "Scalar Projection: " << ans << endl;
 
+	_rResultant.m_fX = VectorAG.m_fX * ans;
+	_rResultant.m_fY = VectorAG.m_fY * ans;
+	_rResultant.m_fZ = VectorAG.m_fZ * ans;
+
+
 	return _rResultant;
 }
 
@@ -402,50 +407,13 @@ name of function : ComputeDistancePointToPlane
 @parameter: Find the Distance From a point to a Plane
 @return: float
 */
-float ComputeDistancePointToPlane(const TPlane& _krPlane, const TVector3& _krPoint) {
+float ComputeDistancePointToPlane(const TPlane& _krPlane, const TVector3& _krPoint)
+{
+	float M = sqrt(pow(_krPlane.m_v3normal.m_fX, 2) + pow(_krPlane.m_v3normal.m_fY, 2) + pow(_krPlane.m_v3normal.m_fZ, 2));
 
-	system("cls");
+	TVector3 VecPo = Subtract(_krPoint, _krPlane.m_v3point, VecPo);
 
-	float x, y, z, A, B, C, D, d;
-
-	std::cout << "COMPUTING DISTANCE FROM ANY POINT TO A PLANE:" << endl << endl;
-
-	std::cout << "1) Enter the Coordinates of the Point:" << endl << endl;
-
-	std::cout << "      Enter the Coordinate x-- ";
-	std::cin >> x;
-	std::cout << "      Enter the Coordinate y-- ";
-	std::cin >> y;
-	std::cout << "      Enter the Coordinate Z-- ";
-	std::cin >> z;
-	cout << endl;
-
-	std::cout << "  The 3D Coordinate is:" << endl;
-	std::cout << "    * " << "(" << x << " , " << y << " , " << z << ")" << "\n";
-	cout << endl << endl;
-
-	std::cout << "2) Finding the EQUATION for the PLANE" << endl << endl;
-	std::cout << "  * Enter the Point A (Vector): ";
-	std::cin >> A;
-	std::cout << "  * Enter the Point B (Vector): ";
-	std::cin >> B;
-	std::cout << "  * Enter the Point C (Vector): ";
-	std::cin >> C;
-	std::cout << "  * Enter the Point D (Vector): ";
-	std::cin >> D;
-	cout << endl;
-
-	std::cout << "  The Equation for the PLANE is: " << endl;
-	std::cout << "  * " << A << "x" << " + " << B << "y" << " + " << C << "z" << " + " << D << " = " << 0 << "\n";
-	cout << endl << endl;
-
-
-	std::cout << "3) Finding the Distance From a POINT to a PLANE:" << endl << endl;
-	d = (A * x + B * y + C * z + D) / (sqrt((pow((A), 2)) + (pow((B), 2)) + (pow((C), 2))));
-
-	if (d < 0) {
-		d = d * -1;
-	}
+	float d = abs((VecPo.m_fX * _krPlane.m_v3normal.m_fX) + (VecPo.m_fY * _krPlane.m_v3normal.m_fY) + (VecPo.m_fZ * _krPlane.m_v3normal.m_fZ)) / M;
 
 	return d;
 }
