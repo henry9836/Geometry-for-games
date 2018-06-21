@@ -504,6 +504,20 @@ int main() {
 		}
 
 		else if (choice == 14) { //ComputeDistancePointToSphere
+			cout << "Sphere Center X:";
+			cin >> SphereA.m_v3center.m_fX;
+			cout << "Sphere Center Y:";
+			cin >> SphereA.m_v3center.m_fY;
+			cout << "Sphere Center Z:";
+			cin >> SphereA.m_v3center.m_fZ;
+			cout << "Sphere Radius: ";
+			cin >> SphereA.m_fRadius;
+			cout << "Point X: ";
+			cin >> VectorA.m_fX;
+			cout << "Point Y: ";
+			cin >> VectorA.m_fY;
+			cout << "Point Z: ";
+			cin >> VectorA.m_fZ;
 			af = ComputeDistancePointToSphere(SphereA, VectorA);
 			cout << "    The Distance Between POINT and Center of the SPHERE is:  " << endl << "     * " << "[" << af << "]" << endl;
 			amountoftests += 1;

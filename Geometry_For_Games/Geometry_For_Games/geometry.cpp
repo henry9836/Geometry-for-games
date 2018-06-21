@@ -424,6 +424,20 @@ name of function : ComputeDistancePointToSphere
 @parameter: Find the Distance Between a point and the Center of a Sphere
 @return: float
 */
+float ComputeDistancePointToSphere(const TSphere& _krSphere, const TVector3& _krPoint)
+{
+	TVector3 _rResultant;
+	TVector3 VecPo;
+	TVector3 DisSpPo = Subtract(_krPoint, _krSphere.m_v3center, _rResultant);
+
+	VecPo = _krPoint;
+
+	float d = sqrt(pow(_krSphere.m_v3center.m_fX - VecPo.m_fX, 2) + pow(_krSphere.m_v3center.m_fY - VecPo.m_fY, 2) + pow(_krSphere.m_v3center.m_fZ - VecPo.m_fZ, 2)) - _krSphere.m_fRadius;
+
+	return d;
+
+}
+/*
 float ComputeDistancePointToSphere(const TSphere& _krSphere, const TVector3& _krPoint){
 
 system("cls");
@@ -466,7 +480,7 @@ system("cls");
 	d = sqrt((pow((x - h), 2)) + (pow((y - k), 2)) + (pow((z - j), 2))) - r;
 	
 	return d;
-}
+}*/
 
 /*
 name of function : ComputeDistanceCircleToCircle

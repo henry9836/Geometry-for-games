@@ -70,7 +70,7 @@ bool testmefunctions() {
 	PlaneAT.m_v3normal = VectorAT;
 	PlaneAT.m_v3point = VectorCT;
 
-	
+
 
 	const float tfloat = 4.0f;
 	
@@ -282,6 +282,21 @@ bool testmefunctions() {
 
 	cout << endl;
 	
+	testfloat = ComputeDistancePointToSphere(SphereAT, VectorAT);
+	if ((testfloat < 1.1) && (testfloat > 0.9)) {
+		cout << "Compute Distance Point To Circle Works!" << endl;
+		Beep(1000, 50);
+	}
+	else {
+		cout << "Problem with Compute Distance Point To Circle" << endl;
+		cout << "Result: " << testfloat << endl;
+		system("COLOR 0C");
+		Beep(300, 1000);
+		system("pause");
+	}
+	
+	cout << endl;
+
 	cout << endl << endl << "-= Testing finished! =-" << endl;
 
 	//system("pause");
