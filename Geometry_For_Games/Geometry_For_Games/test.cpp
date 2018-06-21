@@ -70,12 +70,19 @@ bool testmefunctions() {
 	PlaneAT.m_v3normal = VectorAT;
 	PlaneAT.m_v3point = VectorCT;
 
+	
+
 	const float tfloat = 4.0f;
 	
 	VectorA2DT.m_fX = 3;
 	VectorA2DT.m_fY = 5;
 	VectorB2DT.m_fX = 3;
 	VectorB2DT.m_fY = 99;
+
+	CircleAT.m_fRadius = 2;
+	CircleAT.m_v2center = VectorA2DT;
+	CircleBT.m_fRadius = 4;
+	CircleBT.m_v2center = VectorB2DT;
 
 	cout << "Testing..." << endl;
 
@@ -258,7 +265,23 @@ bool testmefunctions() {
 		system("pause");
 	}
 
+	cout << endl;
 
+	testfloat = ComputeDistanceCircleToCircle(CircleAT, CircleBT);
+	if (testfloat == 94) {
+		cout << "Compute Distance Circle To Circle Works!" << endl;
+		Beep(1000, 50);
+	}
+	else {
+		cout << "Problem with Compute Distance Circle To Circle" << endl;
+		cout << "Result: " << testfloat << endl;
+		system("COLOR 0C");
+		Beep(300, 1000);
+		system("pause");
+	}
+
+	cout << endl;
+	
 	cout << endl << endl << "-= Testing finished! =-" << endl;
 
 	//system("pause");

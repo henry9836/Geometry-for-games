@@ -474,7 +474,21 @@ name of function : ComputeDistanceCircleToCircle
 @parameter: Find the Distance Between the Center of two Circles
 @return: float
 */
-float ComputeDistanceCircleToCircle(const TCircle& _krCircle1, const TCircle& _krCircle2) {
+float ComputeDistanceCircleToCircle(const TCircle& _krCircle1, const TCircle& _krCircle2)
+{
+	TVector2 _rResultant;
+
+	_rResultant.m_fX = _krCircle1.m_v2center.m_fX - _krCircle2.m_v2center.m_fX;
+	_rResultant.m_fY = _krCircle1.m_v2center.m_fY - _krCircle2.m_v2center.m_fY;
+
+	float d = sqrt(pow(_rResultant.m_fX, 2) + pow(_rResultant.m_fY, 2));
+
+
+	return d;
+
+}
+
+/*float ComputeDistanceCircleToCircle(const TCircle& _krCircle1, const TCircle& _krCircle2) {
 
 system("cls");
 
@@ -512,7 +526,7 @@ system("cls");
 	d = sqrt((pow((h2 - h1), 2)) + (pow((k2 - k1), 2)));
 	
 	return d;
-}
+}*/
 
 /*
 name of function : ComputeDistanceCircleToTriangle
