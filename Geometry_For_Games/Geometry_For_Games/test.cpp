@@ -220,8 +220,9 @@ bool testmefunctions() {
 	
 	cout << endl;
 
+	cout << "Line start: (1,1,1) Line End: (2,5,7)" << endl;
 	testfloat = ComputeDistancePointToLine(LineAT, VectorAT);
-	if ((testfloat < 29.229) && (testfloat > 29.227)) {
+	if ((testfloat < 3.22445) && (testfloat > 3.22443)) {
 		cout << "Compute Distance Point To Line Between Works!" << endl;
 		Beep(1000, 50);
 	}
