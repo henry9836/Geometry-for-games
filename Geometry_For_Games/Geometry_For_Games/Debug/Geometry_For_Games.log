@@ -1,0 +1,5 @@
+﻿  test.cpp
+d:\users\andres.vil7740\documents\github\geometry-for-games\geometry_for_games\geometry_for_games\test.cpp(90): error C2679: binary '=': no operator found which takes a right-hand operand of type 'float' (or there is no acceptable conversion)
+  d:\users\andres.vil7740\documents\github\geometry-for-games\geometry_for_games\geometry_for_games\geometry.h(27): note: could be 'TVector3 &TVector3::operator =(TVector3 &&)'
+  d:\users\andres.vil7740\documents\github\geometry-for-games\geometry_for_games\geometry_for_games\geometry.h(27): note: or       'TVector3 &TVector3::operator =(const TVector3 &)'
+  d:\users\andres.vil7740\documents\github\geometry-for-games\geometry_for_games\geometry_for_games\test.cpp(90): note: while trying to match the argument list '(TVector3, float)'
