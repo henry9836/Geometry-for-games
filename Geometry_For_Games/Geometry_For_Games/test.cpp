@@ -54,8 +54,8 @@ float getfloat(float infloat){
 bool testmefunctions() {
 
 	system("cls");
-
-
+	system("COLOR 0E");
+	
 
 	VectorAT.m_fX = 1;
 	VectorAT.m_fY = 1;
@@ -87,6 +87,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Equals" << endl;
 		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -102,6 +103,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Add" << endl;
 		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -116,6 +118,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Subtract" << endl;
 		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -130,6 +133,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with ScaleVector" << endl;
 		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -144,6 +148,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Magnitude" << endl;
 		cout << "Result: " << testfloat << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -158,6 +163,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with DotProduct" << endl;
 		cout << "Result: " << testfloat << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -172,6 +178,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with CrossProduct" << endl;
 		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -186,6 +193,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Normalise" << endl;
 		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -200,6 +208,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Projection" << endl;
 		cout << "Result: (" << VectorAT.m_fX << ", " << VectorAT.m_fY << ", " << VectorAT.m_fZ << ")" << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -214,6 +223,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Compute Angle Between" << endl;
 		cout << "Result: " << testfloat << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -229,6 +239,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Compute Distance Point To Line" << endl;
 		cout << "Result: " << testfloat << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -242,6 +253,7 @@ bool testmefunctions() {
 	else {
 		cout << "Problem with Compute Distance Point To Plane" << endl;
 		cout << "Result: " << testfloat << endl;
+		system("COLOR 0C");
 		Beep(300, 1000);
 		system("pause");
 	}
@@ -249,8 +261,7 @@ bool testmefunctions() {
 
 	cout << endl << endl << "-= Testing finished! =-" << endl;
 
-	system("pause");
-
+	//system("pause");
 	return true;
 }
 

@@ -106,6 +106,7 @@ int main() {
 	int choice = -1;
 	while (choice != 99) {
 		system("cls");
+		system("COLOR 07");
 		cout << "-= Main Menu =-" << endl << endl;
 		cout << "1. Vector Equals Vector" << endl;
 		cout << "2. Add Two Vectors" << endl;
