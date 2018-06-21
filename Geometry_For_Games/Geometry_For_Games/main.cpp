@@ -45,6 +45,7 @@ TSphere SphereD;
 
 TTriangle2 LineA2D;
 TTriangle2 LineB2D;
+TTriangle2 TTriangle2A;
 
 
 float af;
@@ -532,6 +533,23 @@ int main() {
 		}
 
 		else if (choice == 16) { //ComputeDistanceCircleToTriangle
+			system("cls");
+			cout << "Circle Center X: ";
+			cin >> CircleA.m_v2center.m_fX;
+			cout << "Circle Center Y: ";
+			cin >> CircleA.m_v2center.m_fY;
+			cout << "Triangle Point 1 Y: ";
+			cin >> TTriangle2A.m_v2p1.m_fY;
+			cout << "Triangle Point 1 X: ";
+			cin >> TTriangle2A.m_v2p1.m_fX;
+			cout << "Triangle Point 2 Y: ";
+			cin >> TTriangle2A.m_v2p2.m_fY;
+			cout << "Triangle Point 2 X: ";
+			cin >> TTriangle2A.m_v2p2.m_fX;
+			cout << "Triangle Point 3 Y: ";
+			cin >> TTriangle2A.m_v2p3.m_fY;
+			cout << "Triangle Point 3 X: ";
+			cin >> TTriangle2A.m_v2p3.m_fX;
 			af = ComputeDistanceCircleToTriangle(CircleA, LineA2D);
 			cout << "    The Distance Between the Center of the CIRCLE and the TRIANGLE is:  " << endl << "     * " << "[" << af << "]" << endl;
 			amountoftests += 1;

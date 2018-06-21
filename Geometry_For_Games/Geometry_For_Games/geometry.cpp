@@ -548,6 +548,25 @@ name of function : ComputeDistanceCircleToTriangle
 @parameter: Find the Distance Between the Center of a Circles and Triangle
 @return: float
 */
+float ComputeDistanceCircleToTriangle(const TCircle& _krCircle, const TTriangle2& _krTriangle)
+{
+	TVector2 Trianglecenter;
+	TVector2 EndResult;
+
+	Trianglecenter.m_fX = (_krTriangle.m_v2p1.m_fX + _krTriangle.m_v2p2.m_fX + _krTriangle.m_v2p3.m_fX) / 3;
+	Trianglecenter.m_fY = (_krTriangle.m_v2p1.m_fY + _krTriangle.m_v2p2.m_fY + _krTriangle.m_v2p3.m_fY) / 3;
+
+	EndResult.m_fX = _krCircle.m_v2center.m_fX - Trianglecenter.m_fX;
+	EndResult.m_fY = _krCircle.m_v2center.m_fY - Trianglecenter.m_fY;
+
+	float d = sqrt(pow(EndResult.m_fX, 2) + pow(EndResult.m_fY, 2));
+
+
+	return d;
+}
+
+
+/*
 float ComputeDistanceCircleToTriangle(const TCircle& _krCircle, const TTriangle2& _krTriangle) {
 
 	system("cls");
@@ -569,7 +588,7 @@ std::cout << "  The EQUATION for the Circle is:" << endl;
 std::cout << "    * " << "(" << "x" << " - " << h << ")" << "^" << 2 << " + " << "(" << "y" << " - " << k << ")" << "^" << 2 << " = " << r << "^" << 2 << "\n";
 cout << endl << endl;
 */
-
+/*
 cout << "Center Of Circle X: ";
 cin >> cx;
 cout << "Center Of Circle Y: ";
@@ -607,7 +626,7 @@ d = sqrt((dx - cx)*(dx - cx) + ((dy - cy)*(dy - cy)));
 
 return d;
 }
-
+*/
 /*
 name of function : ComputeLineSphereIntersection
 @author: Andres Villacreces

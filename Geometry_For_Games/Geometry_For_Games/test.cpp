@@ -24,6 +24,7 @@ T3DLine LineBT;
 T3DLine LineCT;
 T3DLine LineDT;
 
+TTriangle2 TTriangle2AT;
 
 TCircle CircleAT;
 TCircle CircleBT;
@@ -56,6 +57,7 @@ bool testmefunctions() {
 	system("cls");
 	system("COLOR 0E");
 	
+
 
 	VectorAT.m_fX = 1;
 	VectorAT.m_fY = 1;
@@ -296,6 +298,28 @@ bool testmefunctions() {
 	}
 	
 	cout << endl;
+
+	CircleAT.m_v2center.m_fX = 3;
+	CircleAT.m_v2center.m_fY = 5;
+	TTriangle2AT.m_v2p1.m_fY = 4;
+	TTriangle2AT.m_v2p1.m_fX = 8;
+	TTriangle2AT.m_v2p2.m_fY = 3;
+	TTriangle2AT.m_v2p2.m_fX = 12;
+	TTriangle2AT.m_v2p3.m_fY = 6;
+	TTriangle2AT.m_v2p3.m_fX = 14;
+
+	result = ComputeDistanceCircleToTriangle(CircleAT, TTriangle2AT);
+
+	if (result == 1) {
+		cout << "Compute Distance Circle To Triangle works!";
+	}
+	else {
+		cout << "Problem with Compute Distance Circle To Triangle" << endl;
+		cout << "Result: " << result << endl;
+		system("COLOR 0C");
+		Beep(300, 1000);
+		system("pause");
+	}
 
 	cout << endl << endl << "-= Testing finished! =-" << endl;
 
